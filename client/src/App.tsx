@@ -17,7 +17,7 @@ function App() {
 
       try {
         const token = await getToken();
-        console.log("🔐 Clerk Token");
+        console.log("🔐 Clerk Token:", token);
 
         if (!token) {
           console.error("❌ No token received from Clerk.");
@@ -32,8 +32,7 @@ function App() {
           createdAt: user.createdAt,
         };
 
-        const result = await callProtectedAPI("users", token, "POST", userData);
-        console.log("✅ User synced to DB");
+        await callProtectedAPI("users", token, "POST", userData);
       } catch (error) {
         console.error("❌ Failed to sync user:", error);
       }
