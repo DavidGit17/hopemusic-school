@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "/src/assets/Mainlogo.png";
+import logo from "/src/assets/MainLogo.png";
 import AuthButtons from "./AuthButtons";
 
 export default function Navbar() {
