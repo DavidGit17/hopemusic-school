@@ -1,14 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import {
-  SignInButton,
-  SignUpButton,
-  UserButton,
-  SignedIn,
-  SignedOut,
-  useUser,
-} from "@clerk/clerk-react";
 import logo from "/src/assets/Mainlogo.png";
+import AuthButtons from "./AuthButtons";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -47,22 +40,8 @@ export default function Navbar() {
         ))}
       </div>
       {/* Desktop Auth */}
-      <div className="hidden md:flex items-center space-x-2">
-        <SignedOut>
-          <SignInButton mode="modal" fallbackRedirectUrl="/">
-            <button className="text-black text-sm px-4 py-2 rounded-lg mr-2 hover:bg-gray-200 transition cursor-pointer">
-              Login
-            </button>
-          </SignInButton>
-          <SignUpButton mode="modal" fallbackRedirectUrl="/">
-            <button className="bg-purple-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-purple-700 transition cursor-pointer">
-              Sign Up
-            </button>
-          </SignUpButton>
-        </SignedOut>
-        <SignedIn>
-          <UserButton />
-        </SignedIn>
+      <div className="hidden md:flex">
+        <AuthButtons />
       </div>
       {/* Hamburger Icon for Mobile */}
       <button
@@ -114,23 +93,7 @@ export default function Navbar() {
             {item.label}
           </NavLink>
         ))}
-        <div className="flex flex-col items-center py-2">
-          <SignedOut>
-            <SignInButton mode="modal" fallbackRedirectUrl="/">
-              <button className="text-black text-sm px-4 py-2 rounded-lg mb-2 hover:bg-gray-200 transition cursor-pointer w-32">
-                Login
-              </button>
-            </SignInButton>
-            <SignUpButton mode="modal" fallbackRedirectUrl="/">
-              <button className="bg-purple-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-purple-700 transition cursor-pointer w-32">
-                Sign Up
-              </button>
-            </SignUpButton>
-          </SignedOut>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-        </div>
+        <AuthButtons isMobile />
       </div>
     </nav>
   );
