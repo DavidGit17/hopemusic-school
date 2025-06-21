@@ -76,7 +76,7 @@ export default function Navbar() {
       {/* Background overlay (blur behind content) */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 z-40 bg-white/10 backdrop-blur-xl transition-opacity duration-300 md:hidden"
+          className="fixed inset-0 z-40 bg-white/55 backdrop-blur-xl transition-opacity duration-300 md:hidden"
           onClick={() => setMobileMenuOpen(false)}
         ></div>
       )}
