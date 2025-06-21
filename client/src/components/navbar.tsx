@@ -2,6 +2,7 @@ import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "/src/assets/MainLogo.png";
 import AuthButtons from "./AuthButtons";
+import HamburgerXButton from "./ui/HamburgerXButton";
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -44,13 +45,10 @@ export default function Navbar() {
         <AuthButtons />
       </div>
       {/* Hamburger Icon for Mobile */}
-      <button
-        className="md:hidden flex items-center ml-2 cursor-pointer z-50 relative w-9 h-9"
+      <HamburgerXButton
+        open={mobileMenuOpen}
         onClick={() => setMobileMenuOpen((open) => !open)}
-        aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-      >
-        <span className="sr-only">Toggle menu</span>
-      </button>
+      />
       {/* Mobile Menu */}
       <div
         className={`absolute top-full left-0 w-full bg-white shadow-lg flex flex-col items-center md:hidden z-40 transition-all duration-300 ${
