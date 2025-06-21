@@ -20,8 +20,7 @@ export default function Navbar() {
       <div className="flex items-center flex-1">
         <img src={logo} alt="Logo" className="h-10" />
       </div>
-      {/* Desktop Nav */}
-      <div className="hidden md:flex space-x-8 text-[14px] font-semibold flex-1 justify-center">
+      <div className="desktop-nav hidden md:flex space-x-8 text-[14px] font-semibold flex-1 justify-center">
         {navItems.map((item) => (
           <NavLink
             key={item.to}
@@ -40,18 +39,16 @@ export default function Navbar() {
           </NavLink>
         ))}
       </div>
-      {/* Desktop Auth */}
-      <div className="hidden md:flex">
+      <div className="desktop-auth hidden md:flex">
         <AuthButtons />
       </div>
-      {/* Hamburger Icon for Mobile */}
+
       <HamburgerXButton
         open={mobileMenuOpen}
         onClick={() => setMobileMenuOpen((open) => !open)}
       />
-      {/* Mobile Menu */}
       <div
-        className={`absolute top-full left-0 w-full bg-white shadow-lg flex flex-col items-center md:hidden z-40 transition-all duration-300 ${
+        className={`mobile-menu absolute top-full left-0 w-full bg-white shadow-lg flex flex-col items-center md:hidden z-40 transition-all duration-300 ${
           mobileMenuOpen
             ? "opacity-100 pointer-events-auto translate-y-0"
             : "opacity-0 pointer-events-none -translate-y-2"
