@@ -52,19 +52,22 @@ export default function Navbar() {
         <span className="sr-only">Toggle menu</span>
         <div className="flex flex-col justify-center items-center w-7 h-7 gap-2">
           <span
-            className={`h-0.5 w-7 bg-black rounded transition-all duration-300
+            className={`h-0.5 w-7 bg-black rounded transition-all duration-300 transform
               ${mobileMenuOpen ? "rotate-45 translate-y-2" : ""}
             `}
+            style={{ transition: "transform 0.3s cubic-bezier(0.4,0,0.2,1)" }}
           />
           <span
-            className={`h-0.5 w-7 bg-black rounded transition-all duration-300
-              ${mobileMenuOpen ? "opacity-0" : ""}
+            className={`h-0.5 w-7 bg-black rounded transition-all duration-300 transform
+              ${mobileMenuOpen ? "opacity-0 translate-x-3" : "translate-x-0"}
             `}
+            style={{ transition: "opacity 0.3s cubic-bezier(0.4,0,0.2,1), transform 0.3s cubic-bezier(0.4,0,0.2,1)" }}
           />
           <span
-            className={`h-0.5 w-7 bg-black rounded transition-all duration-300
+            className={`h-0.5 w-7 bg-black rounded transition-all duration-300 transform
               ${mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""}
             `}
+            style={{ transition: "transform 0.3s cubic-bezier(0.4,0,0.2,1)" }}
           />
         </div>
       </button>
