@@ -42,7 +42,7 @@ function App() {
   }, [isSignedIn, user, getToken]);
 
   return (
-    <div className="bg-[#faf5ff] min-h-screen pt-20 md:pt-24">
+    <div className="bg-[#faf5ff] min-h-screen pt-2">
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
