@@ -1,6 +1,5 @@
 import {
   SignInButton,
-  SignUpButton,
   UserButton,
   SignedIn,
   SignedOut,

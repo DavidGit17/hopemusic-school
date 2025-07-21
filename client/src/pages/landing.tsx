@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ChevronRight, Music, Music2, Mic } from "lucide-react";
+import { ChevronRight} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ImageHero from "../assets/HeroIcon.svg"
 import ImageKeyboard from "../assets/InstrumentIcons-Landingpage/Keyboard.svg"
