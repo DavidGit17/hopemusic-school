@@ -1,8 +1,12 @@
-@import "tailwindcss";
-@import "tw-animate-css";
 @import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Edu+VIC+WA+NT+Beginner:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
 
+@theme {
+  --font-playfair: 'Playfair Display', serif;
+}
 
 @custom-variant dark (&:is(.dark *));
 
@@ -117,6 +121,8 @@
   font-family: 'Inter', sans-serif;
 }
 
+/* Remove this if you use Tailwind's font-playfairdisplay utility */
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
@@ -125,4 +131,16 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+html,
+body,
+#root {
+  height          : 100%;
+  background-color: #faf5ff;
+  /* Optional fallback */
+}
+
+body {
+  margin: 0;
 }

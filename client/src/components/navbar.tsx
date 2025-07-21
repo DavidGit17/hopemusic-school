@@ -1,86 +1,102 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import logo from "/src/assets/MainLogo.png";
+import { useAuth } from "@clerk/clerk-react";
+import logo from "/src/assets/hopelogo.png";
 import AuthButtons from "./AuthButtons";
 import HamburgerXButton from "./ui/HamburgerXButton";
-import { useAuth } from "@clerk/clerk-react";
+
+const navItems = [
+  { to: "/", label: "Home" },
+  { to: "/instruments", label: "Instruments" },
+  { to: "/instructors", label: "Instructors" },
+  { to: "/gallery", label: "Gallery" },
+  { to: "/about", label: "About" },
+  { to: "/contact", label: "Contact" },
+];
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { isLoaded } = useAuth();
 
   useEffect(() => {
-    if (mobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-      document.body.style.position = "fixed";
-      document.body.style.width = "100%";
-    } else {
-      document.body.style.overflow = "";
-      document.body.style.position = "";
-      document.body.style.width = "";
-    }
+    document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
+    document.body.style.position = mobileMenuOpen ? "fixed" : "";
+    document.body.style.width = mobileMenuOpen ? "100%" : "";
   }, [mobileMenuOpen]);
 
-  const navItems = [
-    { to: "/", label: "Home" },
-    { to: "/instruments", label: "Instruments" },
-    { to: "/instructors", label: "Instructors" },
-    { to: "/gallery", label: "Gallery" },
-    { to: "/about", label: "About" },
-    { to: "/contact", label: "Contact" },
-  ];
+  const renderNavLinks = (isMobile = false) =>
+    navItems.map((item) => (
+      <NavLink
+        key={item.to}
+        to={item.to}
+        className={({ isActive }) =>
+          [
+            isMobile
+              ? "block w-full text-left px-4 py-3 border-b border-white/20 text-lg"
+              : "px-2 py-1 text-[14px]",
+            "font-semibold rounded transition-colors duration-200",
+            isActive
+              ? "underline underline-offset-4 decoration-[#EC622D] font-bold text-[#262626]"
+              : "hover:underline hover:underline-offset-4 hover:decoration-[#EC622D] ",
+          ].join(" ")
+        }
+        onClick={() => setMobileMenuOpen(false)}
+      >
+        {item.label}
+      </NavLink>
+    ));
 
   return (
     <>
-      {/* Hamburger/X button always on top left, above overlay and modal */}
+      {/* ────── Mobile: Hamburger Left ────── */}
       <div className="fixed top-4 left-2 z-[100] md:hidden">
         <HamburgerXButton
           open={mobileMenuOpen}
-          onClick={() => setMobileMenuOpen((open) => !open)}
+          onClick={() => setMobileMenuOpen((prev) => !prev)}
         />
       </div>
-      <nav className="fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 flex items-center h-fit max-w-screen px-4 md:px-10 py-3 font-inter font-medium min-h-[64px]">
+
+      {/* ────── Mobile: Auth Button Right ────── */}
+      <div className="fixed top-4 right-2 z-[100] md:hidden">
+        {isLoaded ? (
+          <AuthButtons />
+        ) : (
+          <div className="h-8 w-20 bg-gray-200 animate-pulse rounded" />
+        )}
+      </div>
+
+      {/* ────── Desktop Navbar ────── */}
+      <nav className="fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4 md:px-16 py-3 font-inter font-medium min-h-[64px] flex items-center justify-between">
+        
         {/* Logo */}
-        <div className="MainLogo flex items-center flex-1 justify-left">
-          <img src={logo} alt="Logo" className="h-10 md:pl-0 pl-10 " />
+        <div className="flex items-center justify-center md:justify-start flex-shrink-0 w-full md:w-auto">
+          <img src={logo} alt="Logo" className="h-8 w-auto" />
         </div>
-        {/* Desktop Navigation */}
-        <div className="desktop-nav hidden md:flex space-x-8 text-[14px] font-semibold flex-0 pr-5 justify-center">
-          {isLoaded ? (
-            navItems.map((item) => (
-              <NavLink
-                key={item.to}
-                to={item.to}
-                className={({ isActive }) =>
-                  [
-                    "px-2 py-1 rounded transition-colors duration-200",
-                    isActive
-                      ? "underline underline-offset-4 decoration-purple-600 font-bold text-purple-700"
-                      : "hover:underline hover:underline-offset-4 hover:decoration-purple-400 text-black",
-                  ].join(" ")
-                }
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.label}
-              </NavLink>
-            ))
-          ) : (
+
+        {/* Nav Links (centered on desktop) */}
+        <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-8">
+          {isLoaded ? renderNavLinks() : (
             <div className="h-6 w-40 bg-gray-200 animate-pulse rounded" />
           )}
         </div>
-        {/* Desktop Auth Buttons */}
-        <div className="desktop-auth hidden md:flex">
-          {isLoaded ? <AuthButtons /> : <div className="h-8 w-20 bg-gray-200 animate-pulse rounded" />}
+
+        {/* Auth Buttons (right on desktop) */}
+        <div className="hidden md:flex">
+          {isLoaded ? <AuthButtons /> : (
+            <div className="h-8 w-20 bg-gray-200 animate-pulse rounded" />
+          )}
         </div>
       </nav>
-      {/* Background overlay (blur behind content) */}
+
+      {/* ────── Mobile Menu Overlay ────── */}
       {mobileMenuOpen && (
         <div
           className="fixed inset-0 z-40 bg-white/55 backdrop-blur-xl transition-opacity duration-300 md:hidden"
           onClick={() => setMobileMenuOpen(false)}
-        ></div>
+        />
       )}
-      {/* Mobile Menu Modal */}
+
+      {/* ────── Mobile Menu Content ────── */}
       <div
         className={`fixed inset-0 flex items-center justify-center md:hidden z-50 transition-all duration-300 ${
           mobileMenuOpen
@@ -94,31 +110,12 @@ export default function Navbar() {
             mobileMenuOpen ? "translate-y-0" : "-translate-y-10"
           }`}
         >
-          <div className="w-full flex flex-col">
+          <div className="w-full flex flex-col gap-4">
             {isLoaded ? (
-              navItems.map((item) => (
-                <NavLink
-                  key={item.to}
-                  to={item.to}
-                  className={({ isActive }) =>
-                    [
-                      "block w-full text-left px-4 py-3 border-b border-white/20 text-lg font-semibold rounded-md",
-                      isActive
-                        ? "underline underline-offset-4 decoration-purple-600 font-bold text-purple-700"
-                        : "hover:underline hover:underline-offset-4 hover:decoration-purple-400 text-black",
-                    ].join(" ")
-                  }
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </NavLink>
-              ))
+              renderNavLinks(true)
             ) : (
               <div className="h-6 w-40 bg-gray-200 animate-pulse rounded mb-4" />
             )}
-            <div className="mt-4 w-full">
-              {isLoaded ? <AuthButtons isMobile /> : <div className="h-8 w-20 bg-gray-200 animate-pulse rounded" />}
-            </div>
           </div>
         </div>
       </div>

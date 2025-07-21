@@ -10,7 +10,7 @@ export default function AuthButtons({ isMobile = false }: { isMobile?: boolean }
   return (
     <div className={isMobile ? "flex flex-col items-center py-2" : "flex items-center space-x-2"}>
       <SignedOut>
-        <SignInButton mode="modal" fallbackRedirectUrl="/">
+        {/* <SignInButton mode="modal" fallbackRedirectUrl="/">
           <button
             className={
               isMobile
@@ -20,18 +20,18 @@ export default function AuthButtons({ isMobile = false }: { isMobile?: boolean }
           >
             Login
           </button>
-        </SignInButton>
-        <SignUpButton mode="modal" fallbackRedirectUrl="/">
+        </SignInButton> */}
+        <SignInButton mode="modal" fallbackRedirectUrl="/">
           <button
             className={
               isMobile
-                ? "bg-purple-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-purple-700 transition cursor-pointer w-32"
-                : "bg-purple-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-purple-700 transition cursor-pointer"
+                ? " text-white bg-[#EC622D]  text-sm px-6 py-2 rounded-lg border   hover:bg-[#263238] hover:brightness-110 transition cursor-pointer w-32"
+                : " text-white bg-[#EC622D]  text-sm px-6 py-2 rounded-lg border   hover:bg-[#263238] hover:brightness-110 transition cursor-pointer"
             }
           >
-            Sign Up
+            Login
           </button>
-        </SignUpButton>
+        </SignInButton>
       </SignedOut>
       <SignedIn>
         <UserButton />

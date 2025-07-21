@@ -1,15 +1,18 @@
 import { Route, Routes } from "react-router-dom";
 import "./index.css";
 import Home from "./pages/home";
-import Gallery from "./pages/gallery";
-import Navbar from "./components/navbar";
 import { useEffect } from "react";
-import { useAuth, useUser } from "@clerk/clerk-react"; // ✅ added useUser
+import { useAuth, useUser } from "@clerk/clerk-react";
 import { callProtectedAPI } from "./utils/callProtectedApi";
+import Layout from "./components/Layout";
+import Instruments from "./pages/instruments";
+import Instructors from "./pages/instructors";
+import About from "./pages/about";
+import Contact from "./pages/contact";
 
 function App() {
   const { isSignedIn, getToken } = useAuth();
-  const { user } = useUser(); // ✅ fetch Clerk user data
+  const { user } = useUser();
 
   useEffect(() => {
     const syncUser = async () => {
@@ -17,7 +20,6 @@ function App() {
 
       try {
         const token = await getToken();
-        console.log("🔐 Clerk Token:", token);
 
         if (!token) {
           console.error("❌ No token received from Clerk.");
@@ -42,13 +44,15 @@ function App() {
   }, [isSignedIn, user, getToken]);
 
   return (
-    <div className="bg-[#faf5ff] min-h-screen pt-2">
-      <Navbar />
+    <Layout>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/instruments" element={<Instruments />} />
+        <Route path="/instructors" element={<Instructors />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
-    </div>
+    </Layout>
   );
 }
 
