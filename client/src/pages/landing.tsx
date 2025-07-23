@@ -1,17 +1,17 @@
 import { Link } from "react-router-dom";
-import { ChevronRight} from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import ImageHero from "../assets/HeroIcon.svg"
-import ImageKeyboard from "../assets/InstrumentIcons-Landingpage/Keyboard.svg"
-import ImageGuitar from "../assets/InstrumentIcons-Landingpage/Guitar.svg"
+import ImageHero from "../assets/HeroIcon.svg";
+import ImageKeyboard from "../assets/InstrumentIcons-Landingpage/Keyboard.svg";
+import ImageGuitar from "../assets/InstrumentIcons-Landingpage/Guitar.svg";
 import ImageElectronicPads from "../assets/InstrumentIcons-Landingpage/E-DPad.svg";
-import ImageVocals from "../assets/InstrumentIcons-Landingpage/Vocals.svg";
-import ImagePP1 from "../assets/InstructorsProfilePics/PP-1.jpg"
-import ImagePP2 from "../assets/InstructorsProfilePics/PP-2.jpg"
-import ImagePP3 from "../assets/InstructorsProfilePics/PP-3.jpg"
-import ImageTPP1 from "../assets/TestimonialsProfilePics/TPP1.jpg"
-import ImageTPP2 from "../assets/TestimonialsProfilePics/TPP2.jpg"
-import ImageTPP3 from "../assets/TestimonialsProfilePics/TPP3.jpg"
+import ImageVocals from "../assets/InstrumentIcons-Landingpage/Vocals 2.svg";
+import ImagePP1 from "../assets/InstructorsProfilePics/PP-1.jpg";
+import ImagePP2 from "../assets/InstructorsProfilePics/PP-2.jpg";
+import ImagePP3 from "../assets/InstructorsProfilePics/PP-3.jpg";
+import ImageTPP1 from "../assets/TestimonialsProfilePics/TPP1.jpg";
+import ImageTPP2 from "../assets/TestimonialsProfilePics/TPP2.jpg";
+import ImageTPP3 from "../assets/TestimonialsProfilePics/TPP3.jpg";
 import {
   Card,
   CardContent,
@@ -28,12 +28,12 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="flex flex-col items-center text-center font-playfair">
             {/* Heading */}
-            <h1 className="text-[28px] sm:text-[36px] md:text-[48px] lg:text-[56px] xl:text-[64px] font-semibold text-[#EC622D] tracking-[-0.03em] leading-tight max-w-4xl">
-              Discover The Musician in You
+            <h1 className="text-[30px] sm:text-[36px] md:text-[48px] lg:text-[56px] xl:text-[64px] font-semibold text-black tracking-[-0.03em] leading-tight max-w-4xl">
+              Discover the Musician in You
             </h1>
 
             {/* Subheading */}
-            <p className="mt-4 text-base sm:text-lg md:text-xl font-inter font-normal tracking-[-0.03em]  text-[#6C6C6C] max-w-2xl">
+            <p className="mt-4 text-[16px] px-4 sm:text-lg md:text-xl font-inter font-normal tracking-[-0.03em]  text-[#6C6C6C] max-w-2xl">
               No experience needed—just bring your passion for music!
             </p>
 
@@ -64,7 +64,7 @@ export default function Landing() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                <h2 className="text-3xl font-playfair font-bold tracking-tight sm:text-4xl md:text-5xl">
                   Our Instruments
                 </h2>
                 <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
@@ -144,7 +144,7 @@ export default function Landing() {
               </Card>
               <Card className="transition-all hover:shadow-lg">
                 <CardHeader className="p-4 text-center">
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-900">
+                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full ">
                     <img
                       src={ImageVocals}
                       className="mx-auto h-12 w-12 text-[#EC622D]"
@@ -178,7 +178,7 @@ export default function Landing() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              <h2 className="text-3xl font-playfair font-bold tracking-tight sm:text-4xl md:text-5xl">
                 Meet Our Instructors
               </h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
@@ -196,13 +196,14 @@ export default function Landing() {
                 />
               </div>
               <CardHeader>
-                <CardTitle>Sarah Johnson</CardTitle>
-                <CardDescription>Keyboard & Piano</CardDescription>
+                <CardTitle>Sushil</CardTitle>
+                <CardDescription>Keyboard & Vocal Instructor</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Classical pianist with over 15 years of teaching experience.
-                  Master's degree from Juilliard.
+                  Makes learning keyboard and singing feel effortless. His
+                  friendly and clear teaching style helps students pick up music
+                  with confidence and joy.
                 </p>
               </CardContent>
               <CardFooter>
@@ -223,12 +224,13 @@ export default function Landing() {
               </div>
               <CardHeader>
                 <CardTitle>Marcus Lee</CardTitle>
-                <CardDescription>Guitar</CardDescription>
+                <CardDescription>Electronic Drum Instructor</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Professional guitarist who has toured with major artists.
-                  Specializes in rock, jazz, and blues.
+                  Master of rhythm and flow, he makes electronic drumming super
+                  fun to learn—even for total beginners. Every session is packed
+                  with energy!
                 </p>
               </CardContent>
               <CardFooter>
@@ -253,11 +255,12 @@ export default function Landing() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Vocal coach with experience in opera, musical theater, and
-                  contemporary styles.
+                  With a calm and easygoing style, he turns complex guitar
+                  skills into simple steps. Students love how quickly they start
+                  playing real songs.
                   <br />
-                    {/* Add a blank line for alignment */}
-                    <span>&nbsp;</span>
+                  {/* Add a blank line for alignment */}
+                  {/* <span>&nbsp;</span> */}
                 </p>
               </CardContent>
               <CardFooter className="">
@@ -284,7 +287,7 @@ export default function Landing() {
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              <h2 className="text-3xl font-playfair font-bold tracking-tight sm:text-4xl md:text-5xl">
                 What Our Students Say
               </h2>
               <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
@@ -372,7 +375,7 @@ export default function Landing() {
       <section className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-gray-950 flex justify-center">
         <div className="container grid items-center gap-6 px-4 md:px-16 lg:grid-cols-2 lg:gap-10">
           <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
+            <h2 className="text-3xl font-playfair font-bold tracking-tight md:text-4xl/tight">
               Contact Us
             </h2>
             <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">

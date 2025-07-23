@@ -36,8 +36,8 @@ export default function Navbar() {
               : "px-2 py-1 text-[14px]",
             "font-semibold rounded transition-colors duration-200",
             isActive
-              ? "underline underline-offset-4 decoration-[#EC622D] font-bold text-[#262626]"
-              : "hover:underline hover:underline-offset-4 hover:decoration-[#EC622D] ",
+              ? "underline underline-offset-4 decoration-[#EC622D] font-inter text-[#262626]"
+              : "hover:underline hover:underline-offset-4 hover:decoration-[#EC622D]",
           ].join(" ")
         }
         onClick={() => setMobileMenuOpen(false)}
@@ -66,7 +66,7 @@ export default function Navbar() {
       </div>
 
       {/* ────── Desktop Navbar ────── */}
-      <nav className="fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 px-4 md:px-16 py-3 font-inter font-medium min-h-[64px] flex items-center justify-between">
+      <nav className="fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 px-4 md:px-16 py-3 font-inter font-medium min-h-[64px] flex items-center justify-between">
         
         {/* Logo */}
         <div className="flex items-center justify-center md:justify-start flex-shrink-0 w-full md:w-auto">
