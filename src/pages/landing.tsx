@@ -202,7 +202,7 @@ export default function Landing() {
                   />
                 </div>
                 <CardHeader>
-                  <CardTitle>Sushil</CardTitle>
+                  <CardTitle>Sushil Kumar</CardTitle>
                   <CardDescription>Keyboard & Vocal Instructor</CardDescription>
                 </CardHeader>
                 <CardContent>
