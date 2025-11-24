@@ -10,7 +10,6 @@ import Instructors from "./pages/instructors";
 import About from "./pages/about";
 import Contact from "./pages/contact";
 
-
 function App() {
   const { isSignedIn, getToken } = useAuth();
   const { user } = useUser();
@@ -52,7 +51,6 @@ function App() {
         <Route path="/instructors" element={<Instructors />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        
       </Routes>
     </Layout>
   );

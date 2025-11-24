@@ -6,9 +6,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/tabs"
 
 export default function Instruments() {
   return (
-    <div className="flex flex-col min-h-screen mt-16 justify-center w-full">
+    <div className="flex flex-col min-h-screen pt-20">
       <section className="w-full py-12 md:py-24 flex justify-center  lg:py-32 bg-gradient-to-b from-purple-50 to-white dark:from-gray-900 dark:to-gray-950">
-        <div className="container px-4 md:px-6">
+        <div className="container px-4 md:px-6 ">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl">Our Instruments</h1>
@@ -20,7 +20,7 @@ export default function Instruments() {
         </div>
       </section>
 
-      <section className="w-full py-12 md:px-24 px-10  justify-center  md:py-24 flex lg:py-32 bg-white dark:bg-gray-950">
+      <section className="w-full py-12 md:py-24  flex justify-center lg:py-32 bg-white dark:bg-gray-950">
         <div className="container px-4 md:px-6">
           <Tabs defaultValue="keyboard" className="w-full">
             <TabsList className="grid grid-cols-2 sm:grid-cols-4 w-full">

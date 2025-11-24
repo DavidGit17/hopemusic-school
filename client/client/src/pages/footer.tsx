@@ -3,7 +3,7 @@ import ImageHI from "/PT-W.png"
 
 function footer() {
   return (
-    <footer className="border-t bg-white md:px-16  w-full flex justify-center">
+    <footer className="border-t bg-muted/40 md:px-16  w-full flex justify-center">
       <div className="container flex flex-col items-center gap-6 py-8 md:flex-row md:items-center md:justify-between md:py-12">
         <div className="flex flex-col items-center md:items-start gap-2">
           <Link to="/" className="flex items-center gap-2 font-semibold">

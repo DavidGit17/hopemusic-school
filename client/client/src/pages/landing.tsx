@@ -1,14 +1,13 @@
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import ImageHero from "../assets/HopeAnimation (8).svg";
-import ImageBg from "../assets/HeroBg.svg";
+import ImageHero from "../assets/HeroIcon.svg";
 import ImageKeyboard from "../assets/InstrumentIcons-Landingpage/Keyboard.svg";
 import ImageGuitar from "../assets/InstrumentIcons-Landingpage/Guitar.svg";
 import ImageElectronicPads from "../assets/InstrumentIcons-Landingpage/E-DPad.svg";
 import ImageVocals from "../assets/InstrumentIcons-Landingpage/Vocals 2.svg";
 import ImagePP1 from "../assets/InstructorsProfilePics/PP-1.png";
-import ImagePP2 from "../assets/InstructorsProfilePics/PP-2.png"
+import ImagePP2 from "../assets/InstructorsProfilePics/PP-2.png";
 import ImagePP3 from "../assets/InstructorsProfilePics/PP-3.jpg";
 import ImageTPP1 from "../assets/TestimonialsProfilePics/TPP1.jpg";
 import ImageTPP2 from "../assets/TestimonialsProfilePics/TPP2.jpg";
@@ -25,14 +24,9 @@ export default function Landing() {
   return (
     <div>
       {/*//!Hero Section  */}
-      <section className="bg-white pt-20 lg:pt-20 xl:pt-20 relative h-screen">
-        <img
-          src={ImageBg}
-          alt=""
-          className="absolute top-0 left-0 w-full h-full object-cover z-10"
-        />
-        <div className="py-16 relative">
-          <div className="flex flex-col pt-1 items-center text-center font-playfair relative  z-10">
+      <section className="bg-white pt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="flex flex-col items-center text-center font-playfair">
             {/* Heading */}
             <h1 className="text-[30px] sm:text-[36px] md:text-[48px] lg:text-[56px] xl:text-[64px] font-semibold text-black tracking-[-0.03em] leading-tight max-w-4xl">
               Discover the Musician in You
@@ -47,25 +41,26 @@ export default function Landing() {
             <div className="mt-10">
               <Link
                 to=""
-                className="bg-[#FF804F] text-white text-sm sm:text-base font-inter  font-medium px-6 py-3 rounded-lg hover:bg-[#cf501d] transition duration-200"
+                className="bg-[#EC622D] text-white text-sm sm:text-base font-inter  font-medium px-6 py-3 rounded-lg hover:bg-[#cf501d] transition duration-200"
               >
                 Get Started Today
               </Link>
             </div>
+
             {/* Image */}
-            <div className="mt-14 w-full">
+            <div className="mt-14 w-full px-6 sm:px-12 md:px-16 lg:px-20">
               <img
-                alt="Music Illustration"
                 src={ImageHero}
-                className="w-full z-10 relative"
+                alt="Music Illustration"
+                className="w-full md:max-w-3xl  mx-auto"
               />
             </div>
           </div>
         </div>
       </section>
       {/*//!Instruments Section*/}
-      <section className="w-full border">
-        <div className="py-12 md:py-24 lg:py-32 bg-[#ffffff] dark:bg-gray-950 flex justify-center">
+      <section className="w-full">
+        <div className="py-12 md:py-24 lg:py-32 bg-white dark:bg-gray-950 flex justify-center">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -78,7 +73,7 @@ export default function Landing() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-4 items-stretch">
+            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-4">
               <Card className="transition-all hover:shadow-lg">
                 <CardHeader className="p-4 text-center">
                   <img
@@ -87,7 +82,7 @@ export default function Landing() {
                   ></img>
                   <CardTitle className="text-xl">Keyboard</CardTitle>
                 </CardHeader>
-                <CardContent className="p-4 text-center flex-1">
+                <CardContent className="p-4 text-center">
                   <p className="text-sm text-gray-500 dark:text-gray-400">
                     Learn piano and keyboard techniques from classical to
                     contemporary styles
@@ -125,7 +120,7 @@ export default function Landing() {
               </Card>
               <Card className="transition-all hover:shadow-lg">
                 <CardHeader className="p-4 text-center">
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full">
+                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-purple-100 dark:bg-purple-900">
                     <img
                       src={ImageElectronicPads}
                       className="mx-auto h-12 w-12 text-[#EC622D]"
@@ -149,7 +144,7 @@ export default function Landing() {
               </Card>
               <Card className="transition-all hover:shadow-lg">
                 <CardHeader className="p-4 text-center">
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full">
+                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full ">
                     <img
                       src={ImageVocals}
                       className="mx-auto h-12 w-12 text-[#EC622D]"
@@ -157,13 +152,13 @@ export default function Landing() {
                   </div>
                   <CardTitle className="text-xl">Vocals</CardTitle>
                 </CardHeader>
-                <CardContent className="p-4 text-center flex-1">
+                <CardContent className="p-4 text-center">
                   <p className="text-sm text-gray-500 dark:text-gray-400">
                     Develop your singing voice with techniques for all musical
                     genres
-                    {/* <br />
-                    Add a blank line for alignment
-                    <span>&nbsp;</span> */}
+                    <br />
+                    {/* Add a blank line for alignment */}
+                    <span>&nbsp;</span>
                   </p>
                 </CardContent>
                 <CardFooter className="p-4">
@@ -179,118 +174,116 @@ export default function Landing() {
         </div>
       </section>
       {/*//! Instructors Section */}
-      <section className="w-full">
-        <div className="py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-900 flex justify-center">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-playfair font-bold tracking-tight sm:text-4xl md:text-5xl">
-                  Meet Our Instructors
-                </h2>
-                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  Learn from experienced musicians with a passion for teaching
-                </p>
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-900 flex justify-center">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h2 className="text-3xl font-playfair font-bold tracking-tight sm:text-4xl md:text-5xl">
+                Meet Our Instructors
+              </h2>
+              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
+                Learn from experienced musicians with a passion for teaching
+              </p>
+            </div>
+          </div>
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
+            <Card className="overflow-hidden">
+              <div className="aspect-square relative px-4">
+                <img
+                  src={ImagePP1}
+                  alt="Instructor Sarah Johnson"
+                  className="object-cover rounded-lg"
+                />
               </div>
-            </div>
-            <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
-              <Card className="overflow-hidden">
-                <div className="aspect-square relative px-4">
-                  <img
-                    src={ImagePP1}
-                    alt="Instructor Sarah Johnson"
-                    className="object-cover rounded-lg"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle>Sushil Kumar</CardTitle>
-                  <CardDescription>Keyboard & Vocal Instructor</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    Makes learning keyboard and singing feel effortless. His
-                    friendly and clear teaching style helps students pick up
-                    music with confidence and joy.
-                  </p>
-                </CardContent>
-                <CardFooter>
-                  <Link to="/instructors/sarah-johnson">
-                    <Button variant="ghost" size="sm">
-                      View Profile
-                    </Button>
-                  </Link>
-                </CardFooter>
-              </Card>
-              <Card className="overflow-hidden">
-                <div className="aspect-square relative px-4">
-                  <img
-                    src={ImagePP2}
-                    alt="Instructor Marcus Lee"
-                    className="object-cover rounded-lg"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle>Marcus Lee</CardTitle>
-                  <CardDescription>Electronic Drum Instructor</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    Master of rhythm and flow, he makes electronic drumming
-                    super fun to learn—even for total beginners. Every session
-                    is packed with energy!
-                  </p>
-                </CardContent>
-                <CardFooter>
-                  <Link to="/instructors/marcus-lee">
-                    <Button variant="ghost" size="sm">
-                      View Profile
-                    </Button>
-                  </Link>
-                </CardFooter>
-              </Card>
-              <Card className="overflow-hidden">
-                <div className="aspect-square relative px-4">
-                  <img
-                    src={ImagePP3}
-                    alt=""
-                    className="object-cover rounded-lg"
-                  />
-                </div>
-                <CardHeader>
-                  <CardTitle>Elena Rodriguez</CardTitle>
-                  <CardDescription>Vocals</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    With a calm and easygoing style, he turns complex guitar
-                    skills into simple steps. Students love how quickly they
-                    start playing real songs.
-                    <br />
-                    {/* Add a blank line for alignment */}
-                    {/* <span>&nbsp;</span> */}
-                  </p>
-                </CardContent>
-                <CardFooter className="">
-                  <Link to="/instructors/elena-rodriguez">
-                    <Button variant="ghost" size="sm">
-                      View Profile
-                    </Button>
-                  </Link>
-                </CardFooter>
-              </Card>
-            </div>
-            <div className="flex justify-center">
-              <Link to="/instructors">
-                <Button variant="outline">
-                  View All Instructors
-                  <ChevronRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
+              <CardHeader>
+                <CardTitle>Sushil</CardTitle>
+                <CardDescription>Keyboard & Vocal Instructor</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Makes learning keyboard and singing feel effortless. His
+                  friendly and clear teaching style helps students pick up music
+                  with confidence and joy.
+                </p>
+              </CardContent>
+              <CardFooter>
+                <Link to="/instructors/sarah-johnson">
+                  <Button variant="ghost" size="sm">
+                    View Profile
+                  </Button>
+                </Link>
+              </CardFooter>
+            </Card>
+            <Card className="overflow-hidden">
+              <div className="aspect-square relative px-4">
+                <img
+                  src={ImagePP2}
+                  alt="Instructor Marcus Lee"
+                  className="object-cover rounded-lg"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle>Marcus Lee</CardTitle>
+                <CardDescription>Electronic Drum Instructor</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Master of rhythm and flow, he makes electronic drumming super
+                  fun to learn—even for total beginners. Every session is packed
+                  with energy!
+                </p>
+              </CardContent>
+              <CardFooter>
+                <Link to="/instructors/marcus-lee">
+                  <Button variant="ghost" size="sm">
+                    View Profile
+                  </Button>
+                </Link>
+              </CardFooter>
+            </Card>
+            <Card className="overflow-hidden">
+              <div className="aspect-square relative px-4">
+                <img
+                  src={ImagePP3}
+                  alt=""
+                  className="object-cover rounded-lg"
+                />
+              </div>
+              <CardHeader>
+                <CardTitle>Elena Rodriguez</CardTitle>
+                <CardDescription>Vocals</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  With a calm and easygoing style, he turns complex guitar
+                  skills into simple steps. Students love how quickly they start
+                  playing real songs.
+                  <br />
+                  {/* Add a blank line for alignment */}
+                  {/* <span>&nbsp;</span> */}
+                </p>
+              </CardContent>
+              <CardFooter className="">
+                <Link to="/instructors/elena-rodriguez">
+                  <Button variant="ghost" size="sm">
+                    View Profile
+                  </Button>
+                </Link>
+              </CardFooter>
+            </Card>
+          </div>
+          <div className="flex justify-center">
+            <Link to="/instructors">
+              <Button variant="outline">
+                View All Instructors
+                <ChevronRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
       {/*//! Testimonials Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-gray-900 flex justify-center">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-900 flex justify-center">
         <div className="container px-4 md:px-6">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
@@ -379,7 +372,7 @@ export default function Landing() {
       </section>
 
       {/*//! Contact Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-950 flex justify-center">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-gray-950 flex justify-center">
         <div className="container grid items-center gap-6 px-4 md:px-16 lg:grid-cols-2 lg:gap-10">
           <div className="space-y-2">
             <h2 className="text-3xl font-playfair font-bold tracking-tight md:text-4xl/tight">
