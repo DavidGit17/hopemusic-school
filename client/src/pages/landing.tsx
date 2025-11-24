@@ -7,9 +7,9 @@ import ImageKeyboard from "../assets/InstrumentIcons-Landingpage/Keyboard.svg";
 import ImageGuitar from "../assets/InstrumentIcons-Landingpage/Guitar.svg";
 import ImageElectronicPads from "../assets/InstrumentIcons-Landingpage/E-DPad.svg";
 import ImageVocals from "../assets/InstrumentIcons-Landingpage/Vocals 2.svg";
-import ImagePP1 from "../assets/InstructorsProfilePics/PP-1.png";
-import ImagePP2 from "../assets/InstructorsProfilePics/PP-2.png"
-import ImagePP3 from "../assets/InstructorsProfilePics/PP-3.jpg";
+import ImageSushil from "../assets/InstructorsProfilePics/PP-1.png"
+import ImageStephen from "../assets/InstructorsProfilePics/PP-2.png"
+import ImageSunny from "../assets/InstructorsProfilePics/PP-3.jpg"
 import ImageTPP1 from "../assets/TestimonialsProfilePics/TPP1.jpg";
 import ImageTPP2 from "../assets/TestimonialsProfilePics/TPP2.jpg";
 import ImageTPP3 from "../assets/TestimonialsProfilePics/TPP3.jpg";
@@ -196,7 +196,7 @@ export default function Landing() {
               <Card className="overflow-hidden">
                 <div className="aspect-square relative px-4">
                   <img
-                    src={ImagePP1}
+                    src={ImageSushil}
                     alt="Instructor Sarah Johnson"
                     className="object-cover rounded-lg"
                   />
@@ -223,7 +223,7 @@ export default function Landing() {
               <Card className="overflow-hidden">
                 <div className="aspect-square relative px-4">
                   <img
-                    src={ImagePP2}
+                   src={ImageStephen}
                     alt="Instructor Marcus Lee"
                     className="object-cover rounded-lg"
                   />
@@ -250,7 +250,7 @@ export default function Landing() {
               <Card className="overflow-hidden">
                 <div className="aspect-square relative px-4">
                   <img
-                    src={ImagePP3}
+                    src={ImageSunny}
                     alt=""
                     className="object-cover rounded-lg"
                   />
