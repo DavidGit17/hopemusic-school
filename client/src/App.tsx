@@ -9,6 +9,7 @@ import Instruments from "./pages/instruments";
 import Instructors from "./pages/instructors";
 import About from "./pages/about";
 import Contact from "./pages/contact";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 function App() {
@@ -46,6 +47,7 @@ function App() {
 
   return (
     <Layout>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/instruments" element={<Instruments />} />
