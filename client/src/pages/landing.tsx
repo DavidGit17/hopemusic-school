@@ -9,7 +9,7 @@ import ImageElectronicPads from "../assets/InstrumentIcons-Landingpage/E-DPad.sv
 import ImageVocals from "../assets/InstrumentIcons-Landingpage/Vocals 2.svg";
 import ImageSushil from "../assets/InstructorsProfilePics/PP-1.png"
 import ImageStephen from "../assets/InstructorsProfilePics/PP-2.png"
-import ImageSunny from "../assets/InstructorsProfilePics/PP-3.jpg"
+import ImageSunny from "../assets/InstructorsProfilePics/PP-3.png"
 import ImageTPP1 from "../assets/TestimonialsProfilePics/TPP1.jpg";
 import ImageTPP2 from "../assets/TestimonialsProfilePics/TPP2.jpg";
 import ImageTPP3 from "../assets/TestimonialsProfilePics/TPP3.jpg";
