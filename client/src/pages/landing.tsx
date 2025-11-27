@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import ImageHero from "../assets/HopeAnimation (8).svg";
+import HeroBanner from "../assets/svgviewer-output (1).svg";
 import ImageBg from "../assets/HeroBg.svg";
 import ImageKeyboard from "../assets/InstrumentIcons-Landingpage/Keyboard.svg";
 import ImageGuitar from "../assets/InstrumentIcons-Landingpage/Guitar.svg";
 import ImageElectronicPads from "../assets/InstrumentIcons-Landingpage/E-DPad.svg";
 import ImageVocals from "../assets/InstrumentIcons-Landingpage/Vocals 2.svg";
-import ImageSushil from "../assets/InstructorsProfilePics/PP-1.png"
-import ImageStephen from "../assets/InstructorsProfilePics/PP-2.png"
-import ImageSunny from "../assets/InstructorsProfilePics/PP-3.png"
+import ImageSushil from "../assets/InstructorsProfilePics/PP-1.png";
+import ImageStephen from "../assets/InstructorsProfilePics/PP-2.png";
+import ImageSunny from "../assets/InstructorsProfilePics/PP-3.png";
 import ImageTPP1 from "../assets/TestimonialsProfilePics/TPP1.jpg";
 import ImageTPP2 from "../assets/TestimonialsProfilePics/TPP2.jpg";
 import ImageTPP3 from "../assets/TestimonialsProfilePics/TPP3.jpg";
@@ -37,7 +37,6 @@ export default function Landing() {
             <h1 className="text-[30px] sm:text-[36px] md:text-[48px] lg:text-[56px] xl:text-[64px] font-semibold text-black tracking-[-0.03em] leading-tight max-w-4xl">
               Discover the Musician in You
             </h1>
-
             {/* Subheading */}
             <p className="mt-4 text-[16px] px-4 sm:text-lg md:text-xl font-inter font-normal tracking-[-0.03em]  text-[#6C6C6C] max-w-2xl">
               No experience needed—just bring your passion for music!
@@ -56,7 +55,7 @@ export default function Landing() {
             <div className="mt-14 w-full">
               <img
                 alt="Music Illustration"
-                src={ImageHero}
+                src={HeroBanner}
                 className="w-full z-10 relative"
               />
             </div>
@@ -223,7 +222,7 @@ export default function Landing() {
               <Card className="overflow-hidden">
                 <div className="aspect-square relative px-4">
                   <img
-                   src={ImageStephen}
+                    src={ImageStephen}
                     alt="Instructor Marcus Lee"
                     className="object-cover rounded-lg"
                   />
