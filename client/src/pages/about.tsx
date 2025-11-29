@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom"
-// Remove next/image import
-// import Image from "next/image"
 import { Award, Users, Music, Heart, Target, Lightbulb } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -9,361 +7,256 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 export default function About() {
   return (
     <div className="flex flex-col min-h-screen pt-20">
-      {/* Hero Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-purple-50 to-white dark:from-gray-900 dark:to-gray-950">
-        <div className="container px-4 md:px-6">
-          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 xl:grid-cols-2 items-center">
-            <div className="flex flex-col justify-center space-y-4 order-2 lg:order-1">
-              <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                  About Harmony Music School
-                </h1>
-                <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
-                  Inspiring musicians and nurturing musical talent since 2005. We believe every person has the potential
-                  to create beautiful music.
-                </p>
-              </div>
-              <div className="flex flex-col gap-2 min-[400px]:flex-row">
+
+      {/* HERO SECTION */}
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-linear-to-b from-purple-50 to-white dark:from-gray-900 dark:to-gray-950">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+          <div className="grid gap-10 lg:grid-cols-2 place-items-center">
+
+            {/* TEXT */}
+            <div className="space-y-6 order-2 lg:order-1 text-center lg:text-left">
+              <h1 className="text-3xl sm:text-5xl xl:text-6xl font-bold tracking-tight">
+                About Harmony Music School
+              </h1>
+
+              <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto lg:mx-0 text-base sm:text-lg md:text-xl">
+                Inspiring musicians and nurturing talent since 2005. We believe every person has the potential to create beautiful music.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                 <Link to="/contact">
-                  <Button size="lg" className="bg-[#EC622D] hover:bg-[#EC622D]">
+                  <Button size="lg" className="bg-[#EC622D] hover:bg-[#EC622D] w-full sm:w-auto">
                     Join Our Community
                   </Button>
                 </Link>
+
                 <Link to="/instructors">
-                  <Button size="lg" variant="outline">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto">
                     Meet Our Team
                   </Button>
                 </Link>
               </div>
             </div>
-            <div className="flex items-center justify-center order-1 lg:order-2 mb-8 lg:mb-0">
+
+            {/* IMAGE */}
+            <div className="order-1 lg:order-2 w-full flex justify-center">
               <img
-                src="https://preview-music-school-website-kzmntsu7nnz4q704nj2d.vusercontent.net/placeholder.svg?height=400&width=600"
-                width={550}
-                height={550}
+                src="https://preview-music-school-website-kzmntsu7nnz4q704nj2d.vusercontent.net/placeholder.svg?height=500&width=700"
                 alt="Harmony Music School Building"
-                className="rounded-lg object-cover w-full max-w-xs sm:max-w-md md:max-w-lg"
-                loading="eager"
+                className="rounded-lg object-cover w-full max-w-sm sm:max-w-md md:max-w-lg"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Our Story Section */}
+      {/* OUR STORY */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-gray-950">
-        <div className="container px-4 md:px-6">
-          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
-            <div className="flex items-center justify-center">
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+
+          <div className="grid gap-12 lg:grid-cols-2 place-items-center">
+
+            {/* IMAGE */}
+            <div className="w-full">
               <img
-                src="/placeholder.svg?height=400&width=600&text=Music+Lesson+in+Progress"
-                width={600}
-                height={400}
+                src="/placeholder.svg?height=400&width=600"
                 alt="Music lesson in progress"
-                className="rounded-lg object-cover"
-                loading="lazy"
+                className="rounded-lg object-cover w-full max-w-xl mx-auto"
               />
             </div>
-            <div className="flex flex-col justify-center space-y-4">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter">Our Story</h2>
-                <p className="max-w-[900px] text-gray-500 text-base sm:text-lg md:text-xl lg:text-xl dark:text-gray-400">
-                  Founded in 2005 by a group of passionate musicians and educators, Harmony Music School began as a
-                  small studio with a big dream: to make quality music education accessible to everyone.
-                </p>
-              </div>
-              <div className="space-y-4">
-                <p className="text-gray-500 dark:text-gray-400">
-                  What started with just three instructors and a handful of students has grown into a thriving community
-                  of over 500 students and 15 expert instructors. Our success stems from our unwavering commitment to
-                  personalized instruction and our belief that music has the power to transform lives.
-                </p>
-                <p className="text-gray-500 dark:text-gray-400">
-                  Today, we're proud to be the premier music education destination in our community, offering
-                  comprehensive programs in keyboard, guitar, electronic music production, and vocals. Our students have
-                  gone on to perform professionally, attend prestigious music schools, and most importantly, develop a
-                  lifelong love of music.
-                </p>
-              </div>
+
+            {/* TEXT */}
+            <div className="space-y-6 text-center lg:text-left">
+              <h2 className="text-3xl font-bold tracking-tight">Our Story</h2>
+
+              <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto lg:mx-0 text-base sm:text-lg md:text-xl">
+                Founded in 2005 by passionate musicians, Harmony Music School began as a small studio with a dream: to make quality music education accessible to everyone.
+              </p>
+
+              <p className="text-gray-500 dark:text-gray-400">
+                What started with three instructors and a few students is now a thriving community of 500+ learners and 15 expert mentors. Our growth comes from personalized teaching and a deep love for music.
+              </p>
+
+              <p className="text-gray-500 dark:text-gray-400">
+                Today, we offer programs in keyboard, guitar, electronic production, and vocals — empowering students to perform, create, and enjoy music for life.
+              </p>
             </div>
+
           </div>
         </div>
       </section>
 
-      {/* Mission & Values Section */}
+      {/* MISSION & VALUES */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-900">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Our Mission & Values</h2>
-            <p className="max-w-[800px] text-gray-500 md:text-xl/relaxed dark:text-gray-400">
-              We're guided by core principles that shape everything we do
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Our Mission & Values</h2>
+            <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto text-base md:text-xl">
+              We're guided by core principles that define our teaching and community.
             </p>
           </div>
 
-          <div className="grid gap-6 lg:grid-cols-3 mb-16">
-            <Card className="text-center">
-              <CardHeader>
-                <Heart className="mx-auto h-12 w-12 text-[#EC622D] mb-4" />
-                <CardTitle>Passion for Music</CardTitle>
-              </CardHeader>
+          {/* VALUES CARDS */}
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+            <Card className="text-center p-6">
+              <Heart className="mx-auto h-12 w-12 text-[#EC622D] mb-4" />
+              <CardHeader><CardTitle>Passion for Music</CardTitle></CardHeader>
               <CardContent>
                 <p className="text-gray-500 dark:text-gray-400">
-                  We believe music is a universal language that brings joy, builds confidence, and creates lasting
-                  connections between people.
+                  Music is a language that builds joy, confidence, and connection.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="text-center">
-              <CardHeader>
-                <Target className="mx-auto h-12 w-12 text-[#EC622D] mb-4" />
-                <CardTitle>Personalized Learning</CardTitle>
-              </CardHeader>
+            <Card className="text-center p-6">
+              <Target className="mx-auto h-12 w-12 text-[#EC622D] mb-4" />
+              <CardHeader><CardTitle>Personalized Learning</CardTitle></CardHeader>
               <CardContent>
                 <p className="text-gray-500 dark:text-gray-400">
-                  Every student is unique. We tailor our teaching methods to match individual learning styles, goals,
-                  and musical interests.
+                  Every student is unique, so we tailor lessons to match individual goals.
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="text-center">
-              <CardHeader>
-                <Lightbulb className="mx-auto h-12 w-12 text-[#EC622D] mb-4" />
-                <CardTitle>Innovation in Education</CardTitle>
-              </CardHeader>
+            <Card className="text-center p-6">
+              <Lightbulb className="mx-auto h-12 w-12 text-[#EC622D] mb-4" />
+              <CardHeader><CardTitle>Innovation in Education</CardTitle></CardHeader>
               <CardContent>
                 <p className="text-gray-500 dark:text-gray-400">
-                  We embrace modern teaching techniques and technology while honoring traditional musical foundations.
+                  We blend modern techniques with strong musical foundations.
                 </p>
               </CardContent>
             </Card>
+
           </div>
 
-          <div className="text-center">
+          <div className="text-center mt-16">
             <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
-            <p className="max-w-[800px] mx-auto text-lg text-gray-500 dark:text-gray-400">
-              "To inspire and nurture musical talent in students of all ages and skill levels, providing exceptional
-              instruction in a supportive, creative environment that fosters both technical excellence and artistic
-              expression."
+            <p className="max-w-2xl mx-auto text-gray-500 dark:text-gray-400 text-lg">
+              "To inspire and nurture talent in a supportive environment that cultivates creativity, skill, and artistic passion."
             </p>
           </div>
+
         </div>
       </section>
 
-      {/* Statistics Section */}
+      {/* IMPACT SECTION */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-gray-950">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Our Impact</h2>
-            <p className="max-w-[800px] text-gray-500 md:text-xl/relaxed dark:text-gray-400">
-              Nearly two decades of musical education excellence
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Our Impact</h2>
+            <p className="max-w-xl mx-auto text-gray-500 dark:text-gray-400 text-base md:text-xl">
+              Nearly two decades of shaping musical journeys.
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <Card className="text-center">
-              <CardHeader>
-                <Users className="mx-auto h-12 w-12 text-[#EC622D] mb-4" />
-                <CardTitle className="text-3xl font-bold">500+</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-500 dark:text-gray-400">Active Students</p>
-              </CardContent>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+            <Card className="text-center p-6">
+              <Users className="mx-auto h-12 w-12 text-[#EC622D] mb-4" />
+              <CardHeader><CardTitle className="text-3xl font-bold">500+</CardTitle></CardHeader>
+              <CardContent><p className="text-gray-500">Active Students</p></CardContent>
             </Card>
 
-            <Card className="text-center">
-              <CardHeader>
-                <Music className="mx-auto h-12 w-12 text-[#EC622D] mb-4" />
-                <CardTitle className="text-3xl font-bold">15</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-500 dark:text-gray-400">Expert Instructors</p>
-              </CardContent>
+            <Card className="text-center p-6">
+              <Music className="mx-auto h-12 w-12 text-[#EC622D] mb-4" />
+              <CardHeader><CardTitle className="text-3xl font-bold">15</CardTitle></CardHeader>
+              <CardContent><p className="text-gray-500">Expert Instructors</p></CardContent>
             </Card>
 
-            <Card className="text-center">
-              <CardHeader>
-                <Award className="mx-auto h-12 w-12 text-[#EC622D] mb-4" />
-                <CardTitle className="text-3xl font-bold">18</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-500 dark:text-gray-400">Years of Excellence</p>
-              </CardContent>
+            <Card className="text-center p-6">
+              <Award className="mx-auto h-12 w-12 text-[#EC622D] mb-4" />
+              <CardHeader><CardTitle className="text-3xl font-bold">18</CardTitle></CardHeader>
+              <CardContent><p className="text-gray-500">Years of Excellence</p></CardContent>
             </Card>
 
-            <Card className="text-center">
-              <CardHeader>
-                <Target className="mx-auto h-12 w-12 text-[#EC622D] mb-4" />
-                <CardTitle className="text-3xl font-bold">2000+</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-500 dark:text-gray-400">Graduates</p>
-              </CardContent>
+            <Card className="text-center p-6">
+              <Target className="mx-auto h-12 w-12 text-[#EC622D] mb-4" />
+              <CardHeader><CardTitle className="text-3xl font-bold">2000+</CardTitle></CardHeader>
+              <CardContent><p className="text-gray-500">Graduates</p></CardContent>
             </Card>
+
           </div>
         </div>
       </section>
 
-      {/* Facilities Section */}
+      {/* FACILITIES */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-900">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Our Facilities</h2>
-            <p className="max-w-[800px] text-gray-500 md:text-xl/relaxed dark:text-gray-400">
-              State-of-the-art spaces designed for optimal learning and creativity
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+
+          <div className="text-center space-y-4 mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Our Facilities</h2>
+            <p className="max-w-xl mx-auto text-gray-500 dark:text-gray-400 text-base md:text-xl">
+              Designed for creativity, learning, and performance.
             </p>
           </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <Card className="overflow-hidden">
-              <div className="aspect-video relative">
-                <img
-                  src="/placeholder.svg?height=200&width=400&text=Piano+Studio"
-                  alt="Piano Studio"
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  className="object-cover w-full h-full"
-                  loading="lazy"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>Piano Studios</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Six soundproof studios equipped with premium acoustic and digital pianos, perfect for focused
-                  learning.
-                </p>
-              </CardContent>
-            </Card>
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
 
-            <Card className="overflow-hidden">
-              <div className="aspect-video relative">
-                <img
-                  src="/placeholder.svg?height=200&width=400&text=Guitar+Room"
-                  alt="Guitar Room"
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  className="object-cover w-full h-full"
-                  loading="lazy"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>Guitar Rooms</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Dedicated spaces with professional amplifiers and a variety of acoustic and electric guitars.
-                </p>
-              </CardContent>
-            </Card>
+            {[
+              "Piano Studio",
+              "Guitar Room",
+              "Recording Studio",
+              "Electronic Lab",
+              "Performance Hall",
+              "Lounge Area",
+            ].map((title) => (
+              <Card key={title} className="overflow-hidden">
+                <div className="aspect-video">
+                  <img
+                    src={`/placeholder.svg?text=${title}`}
+                    alt={title}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+                <CardHeader><CardTitle>{title}</CardTitle></CardHeader>
+                <CardContent>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm">
+                    State-of-the-art space for enhanced learning experience.
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
 
-            <Card className="overflow-hidden">
-              <div className="aspect-video relative">
-                <img
-                  src="/placeholder.svg?height=200&width=400&text=Recording+Studio"
-                  alt="Recording Studio"
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  className="object-cover w-full h-full"
-                  loading="lazy"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>Recording Studio</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Professional recording facilities where students can create demos and experience studio production.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden">
-              <div className="aspect-video relative">
-                <img
-                  src="/placeholder.svg?height=200&width=400&text=Electronic+Lab"
-                  alt="Electronic Music Lab"
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  className="object-cover w-full h-full"
-                  loading="lazy"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>Electronic Music Lab</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Cutting-edge digital workstations with the latest software and electronic instruments.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden">
-              <div className="aspect-video relative">
-                <img
-                  src="/placeholder.svg?height=200&width=400&text=Performance+Hall"
-                  alt="Performance Hall"
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  className="object-cover w-full h-full"
-                  loading="lazy"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>Performance Hall</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  A beautiful 100-seat venue for recitals, concerts, and special events with professional lighting and
-                  sound.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden">
-              <div className="aspect-video relative">
-                <img
-                  src="/placeholder.svg?height=200&width=400&text=Lounge+Area"
-                  alt="Student Lounge"
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                  className="object-cover w-full h-full"
-                  loading="lazy"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle>Student Lounge</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Comfortable waiting area for parents and students with free Wi-Fi and refreshments.
-                </p>
-              </CardContent>
-            </Card>
           </div>
+
         </div>
       </section>
 
-      {/* Call to Action */}
+      {/* CTA SECTION */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-gray-950">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Ready to Begin Your Musical Journey?</h2>
-            <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed dark:text-gray-400">
-              Join our community of passionate musicians and discover the joy of making music
+        <div className="max-w-7xl mx-auto px-4 md:px-6">
+
+          <div className="text-center space-y-6">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+              Ready to Begin Your Musical Journey?
+            </h2>
+
+            <p className="max-w-xl mx-auto text-gray-500 dark:text-gray-400 md:text-lg">
+              Join a community of passionate musicians and discover the joy of creating music.
             </p>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row">
+
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Link to="/contact">
-                <Button size="lg" className="bg-[#EC622D] hover:bg-[#EC622D]">
+                <Button size="lg" className="bg-[#EC622D] hover:bg-[#EC622D] w-full sm:w-auto">
                   Get Started Today
                 </Button>
               </Link>
+
               <Link to="/gallery">
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto">
                   View Our Gallery
                 </Button>
               </Link>
             </div>
+
           </div>
         </div>
       </section>
+
     </div>
   )
 }

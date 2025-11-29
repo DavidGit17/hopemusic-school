@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useAuth } from "@clerk/clerk-react";
 import logo from "/src/assets/hopelogo.png";
 import AuthButtons from "./AuthButtons";
@@ -17,11 +17,13 @@ const navItems = [
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { isLoaded } = useAuth();
+  const handleToggleMobileMenu = () => {
+    console.debug("Navbar: toggling mobile menu");
+    setMobileMenuOpen((prev) => !prev);
+  };
 
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? "hidden" : "";
-    document.body.style.position = mobileMenuOpen ? "fixed" : "";
-    document.body.style.width = mobileMenuOpen ? "100%" : "";
   }, [mobileMenuOpen]);
 
   const renderNavLinks = (isMobile = false) =>
@@ -29,18 +31,18 @@ export default function Navbar() {
       <NavLink
         key={item.to}
         to={item.to}
+        onClick={() => setMobileMenuOpen(false)}
         className={({ isActive }) =>
           [
             isMobile
-              ? "block w-full text-left px-4 py-3 border-b border-white/20 text-lg"
-              : "px-2 py-1 text-[14px]",
-            "font-semibold rounded transition-colors duration-200",
+              ? "block w-full px-4 py-3 text-left border-b border-gray-200"
+              : "px-2 py-1",
+            "text-[14px] font-semibold transition-colors duration-200 rounded",
             isActive
-              ? "underline underline-offset-4 decoration-[#EC622D] font-inter text-[#262626]"
+              ? "underline underline-offset-4 decoration-[#EC622D] text-[#262626]"
               : "hover:underline hover:underline-offset-4 hover:decoration-[#EC622D]",
           ].join(" ")
         }
-        onClick={() => setMobileMenuOpen(false)}
       >
         {item.label}
       </NavLink>
@@ -48,75 +50,105 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ────── Mobile: Hamburger Left ────── */}
-      <div className="fixed top-4 left-2 z-[100] md:hidden">
-        <HamburgerXButton
-          open={mobileMenuOpen}
-          onClick={() => setMobileMenuOpen((prev) => !prev)}
-        />
-      </div>
+      {/* NAVBAR */}
+      <nav
+        className="
+    fixed top-0 left-0 z-60 w-full h-16
+    flex items-center 
+    px-4 md:px-10 lg:px-16
+    bg-white/30 backdrop-blur-lg
+    border-b border-white/20
+  "
+      >
+        {/* MOBILE NAVBAR (3 columns) */}
+        <div className="flex w-full items-center justify-between md:hidden">
+          {/* LEFT: Hamburger */}
+          <div className="flex w-1/3 items-center z-999">
+            <HamburgerXButton
+              open={mobileMenuOpen}
+              onClick={handleToggleMobileMenu}
+            />
+          </div>
 
-      {/* ────── Mobile: Auth Button Right ────── */}
-      <div className="fixed top-4 right-2 z-[100] md:hidden">
-        {isLoaded ? (
-          <AuthButtons />
-        ) : (
-          <div className="h-8 w-20 bg-gray-200 animate-pulse rounded" />
-        )}
-      </div>
+          {/* CENTER: Logo */}
+          <div className="flex w-1/3 justify-center">
+            <Link to="/">
+              <img src={logo} alt="Logo" className="h-8 w-auto" />
+            </Link>
+          </div>
 
-      {/* ────── Desktop Navbar ────── */}
-      <nav className="fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80 px-4 md:px-16 py-3 font-inter font-medium min-h-[64px] flex items-center justify-between">
-        
-        {/* Logo */}
-        <div className="flex items-center justify-center md:justify-start flex-shrink-0 w-full md:w-auto">
-          <img src={logo} alt="Logo" className="h-8 w-auto" />
+          {/* RIGHT: Auth */}
+          <div className="flex w-1/3 justify-end">
+            {isLoaded ? (
+              <AuthButtons />
+            ) : (
+              <div className="w-20 h-8 bg-gray-200 rounded animate-pulse" />
+            )}
+          </div>
         </div>
 
-        {/* Nav Links (centered on desktop) */}
-        <div className="hidden md:flex absolute left-1/2 transform -translate-x-1/2 space-x-8">
-          {isLoaded ? renderNavLinks() : (
-            <div className="h-6 w-40 bg-gray-200 animate-pulse rounded" />
-          )}
-        </div>
+        {/* DESKTOP */}
+        <div className="hidden md:flex w-full items-center justify-between">
+          <Link to="/" className="flex items-center">
+            <img src={logo} alt="Logo" className="h-9 w-auto" />
+          </Link>
 
-        {/* Auth Buttons (right on desktop) */}
-        <div className="hidden md:flex">
-          {isLoaded ? <AuthButtons /> : (
-            <div className="h-8 w-20 bg-gray-200 animate-pulse rounded" />
-          )}
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-10">
+            {isLoaded ? (
+              renderNavLinks()
+            ) : (
+              <div className="w-40 h-6 bg-gray-200 rounded animate-pulse" />
+            )}
+          </div>
+
+          <div className="hidden md:flex">
+            {isLoaded ? (
+              <AuthButtons />
+            ) : (
+              <div className="w-20 h-8 bg-gray-200 rounded animate-pulse" />
+            )}
+          </div>
         </div>
       </nav>
 
-      {/* ────── Mobile Menu Overlay ────── */}
-      {mobileMenuOpen && (
-        <div
-          className="fixed inset-0 z-40 bg-white/55 backdrop-blur-xl transition-opacity duration-300 md:hidden"
-          onClick={() => setMobileMenuOpen(false)}
-        />
-      )}
-
-      {/* ────── Mobile Menu Content ────── */}
+      {/* MOBILE OVERLAY (blur + dim) */}
       <div
-        className={`fixed inset-0 flex items-center justify-center md:hidden z-50 transition-all duration-300 ${
-          mobileMenuOpen
-            ? "opacity-100 scale-100 pointer-events-auto"
-            : "opacity-0 scale-95 pointer-events-none"
-        }`}
-        style={{ contain: "paint", willChange: "opacity, transform" }}
+        className={`
+          fixed inset-0 z-45 md:hidden
+          bg-black/40 backdrop-blur-md
+          transition-opacity duration-300
+          ${
+            mobileMenuOpen
+              ? "opacity-100 pointer-events-auto"
+              : "opacity-0 pointer-events-none"
+          }
+        `}
+        onClick={() => setMobileMenuOpen(false)}
+      />
+
+      {/* MOBILE MENU */}
+      <div
+        className={`
+          fixed inset-0 z-50 md:hidden flex items-center justify-center
+          transition-all duration-300
+          ${
+            mobileMenuOpen
+              ? "opacity-100 scale-100"
+              : "opacity-0 scale-95 pointer-events-none"
+          }
+        `}
       >
         <div
-          className={`w-4/5 max-w-xs bg-white/30 backdrop-blur-xl border border-white/20 shadow-2xl rounded-2xl p-6 flex flex-col items-center transition-all duration-300 ${
-            mobileMenuOpen ? "translate-y-0" : "-translate-y-10"
-          }`}
+          className="
+            w-4/5 max-w-xs p-6 rounded-2xl
+            bg-white shadow-xl
+          "
         >
-          <div className="w-full flex flex-col gap-4">
-            {isLoaded ? (
-              renderNavLinks(true)
-            ) : (
-              <div className="h-6 w-40 bg-gray-200 animate-pulse rounded mb-4" />
-            )}
-          </div>
+          {isLoaded ? (
+            renderNavLinks(true)
+          ) : (
+            <div className="w-40 h-6 bg-gray-200 rounded animate-pulse" />
+          )}
         </div>
       </div>
     </>

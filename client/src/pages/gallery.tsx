@@ -1,4 +1,4 @@
-import image from "../assets/mountain-scenery-minimalist-digital-art-4k-wallpaper-uhdpaper.com-848@1@m.jpg";
+import image from "../assets/wallpaperflare.com_wallpaper (14).jpg"
 
 function Gallery() {
   return (

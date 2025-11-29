@@ -6,10 +6,15 @@ interface HamburgerXButtonProps {
 export default function HamburgerXButton({ open, onClick }: HamburgerXButtonProps) {
   return (
     <button
-      className={`md:hidden flex items-center ml-1 cursor-pointer z-50 relative w-8 h-8 rounded-lg justify-center transition-all duration-200 ${
+      className={`md:hidden flex items-center ml-1 cursor-pointer z-[999] relative w-8 h-8 rounded-lg justify-center transition-all duration-200 ${
         open ? "border border-black" : "border-none"
       }`}
-      onClick={onClick}
+      onClick={(e) => {
+        e.stopPropagation();
+        // eslint-disable-next-line no-console
+        console.debug("HamburgerXButton: click received");
+        onClick();
+      }}
       aria-label={open ? "Close menu" : "Open menu"}
       type="button"
     >

@@ -24,11 +24,11 @@ export default function AuthButtons({ isMobile = false }: { isMobile?: boolean }
           <button
             className={
               isMobile
-                ? " text-white bg-[#EC622D]  text-sm px-6 py-2 rounded-lg border   hover:bg-[#263238] hover:brightness-110 transition cursor-pointer w-32"
-                : " text-white bg-[#EC622D]  text-sm px-6 py-2 rounded-lg border   hover:bg-[#263238] hover:brightness-110 transition cursor-pointer"
+                ? " text-white bg-[#EC622D]  text-sm px-6 py-2 rounded-lg hover:bg-[#263238] hover:brightness-110 transition cursor-pointer w-32"
+                : " text-white bg-[#EC622D]  text-sm px-6 py-2 rounded-lg font-semibold font-inter hover:bg-[#be491a] hover:brightness-110 transition cursor-pointer"
             }
           >
-            Login
+            LOGIN
           </button>
         </SignInButton>
       </SignedOut>

@@ -10,6 +10,7 @@ import Instructors from "./pages/instructors";
 import About from "./pages/about";
 import Contact from "./pages/contact";
 import ScrollToTop from "./components/ScrollToTop";
+import Gallery from "./pages/gallery";
 
 function App() {
   const { isSignedIn, getToken } = useAuth();
@@ -30,7 +31,8 @@ function App() {
         const userData = {
           clerkId: user.id,
           username: user.username || user.firstName || "Guest",
-          email: user.primaryEmailAddress?.emailAddress || "noemail@example.com",
+          email:
+            user.primaryEmailAddress?.emailAddress || "noemail@example.com",
           createdAt: user.createdAt,
         };
 
@@ -53,6 +55,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/instruments" element={<Instruments />} />
           <Route path="/instructors" element={<Instructors />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
@@ -62,4 +65,3 @@ function App() {
 }
 
 export default App;
-
