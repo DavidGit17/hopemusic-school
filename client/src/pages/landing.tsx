@@ -27,7 +27,7 @@ export default function Landing() {
   return (
     <div className="w-full overflow-x-hidden">
       {/* HERO SECTION */}
-      <section className=" w-full flex flex-col items-center justify-centermin-h-[75vh] py-12 md:py-24bg-linear-to-b from-purple-50 to-white">
+      <section className=" w-full flex flex-col items-center justify-center min-h-[75vh] py-12 md:py-24 bg-linear-to-b from-purple-50 to-white">
         <img
           src={HeroBg}
           className="absolute inset-0 w-full h-full object-cover z-0"

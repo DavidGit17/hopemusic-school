@@ -6,7 +6,7 @@ interface HamburgerXButtonProps {
 export default function HamburgerXButton({ open, onClick }: HamburgerXButtonProps) {
   return (
     <button
-      className={`md:hidden flex items-center ml-1 cursor-pointer z-[999] relative w-8 h-8 rounded-lg justify-center transition-all duration-200 ${
+      className={`md:hidden flex items-center ml-1 cursor-pointer z-999 relative w-8 h-8 rounded-lg justify-center transition-all duration-200 ${
         open ? "border border-black" : "border-none"
       }`}
       onClick={(e) => {
@@ -19,7 +19,7 @@ export default function HamburgerXButton({ open, onClick }: HamburgerXButtonProp
       type="button"
     >
       <span className="sr-only">Toggle menu</span>
-      <div className="flex flex-col justify-center items-center w-7 h-7 gap-[6px]">
+      <div className="flex flex-col justify-center items-center w-7 h-7 gap-1.5">
         <span
           className={`h-0.5 w-6 bg-black rounded transition-all duration-300 transform
             ${open ? "rotate-45 translate-y-2" : ""}
