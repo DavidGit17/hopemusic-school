@@ -164,7 +164,7 @@ export default function Instructors() {
 
                   <div>
                     <h4 className="font-medium mb-1">Specialties</h4>
-                    <div className="flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2 text-[#EC622D]">
                       {inst.specialties.map((s) => (
                         <Badge
                           key={s}
