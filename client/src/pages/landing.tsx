@@ -222,8 +222,8 @@ export default function Landing() {
                 </div>
 
                 <CardHeader>
-                  <CardTitle>Stephen</CardTitle>
-                  <CardDescription>Drummer & Electronic Percussionist</CardDescription>
+                  <CardTitle>Marcus Lee</CardTitle>
+                  <CardDescription>Electronic Drum Instructor</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1">
                   <p className="text-gray-500 text-sm">
@@ -250,8 +250,8 @@ export default function Landing() {
                 </div>
 
                 <CardHeader>
-                  <CardTitle>Sunny</CardTitle>
-                  <CardDescription>Guitarist</CardDescription>
+                  <CardTitle>Elena Rodriguez</CardTitle>
+                  <CardDescription>Vocals</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1">
                   <p className="text-gray-500 text-sm">
