@@ -8,9 +8,7 @@ import ImageKeyboard from "../assets/InstrumentIcons-Landingpage/Keyboard.svg";
 import ImageGuitar from "../assets/InstrumentIcons-Landingpage/Guitar.svg";
 import ImageElectronicPads from "../assets/InstrumentIcons-Landingpage/E-DPad.svg";
 import ImageVocals from "../assets/InstrumentIcons-Landingpage/Vocals 2.svg";
-import ImageSushil from "../assets/InstructorsProfilePics/PP-1.png";
-import ImageStephen from "../assets/InstructorsProfilePics/PP-2.png";
-import ImageSunny from "../assets/InstructorsProfilePics/PP-3.png";
+import { SushilKumar, Stephen, Sunny } from "@/assets/Images/InstructorsPfps";
 import ImageTPP1 from "../assets/TestimonialsProfilePics/TPP1.jpg";
 import ImageTPP2 from "../assets/TestimonialsProfilePics/TPP2.jpg";
 import ImageTPP3 from "../assets/TestimonialsProfilePics/TPP3.jpg";
@@ -190,7 +188,7 @@ export default function Landing() {
               <Card className="overflow-hidden flex flex-col px-2 pt-3">
                 <div className="relative w-full h-72 rounded-xl overflow-hidden flex items-center justify-center bg-[#F3F4F6]">
                   <img
-                    src={ImageSushil}
+                    src={SushilKumar}
                     className="max-h-full w-auto object-contain"
                   />
                 </div>
@@ -218,14 +216,14 @@ export default function Landing() {
               <Card className="overflow-hidden flex flex-col px-2 pt-3">
                 <div className="relative w-full h-72 rounded-xl overflow-hidden flex items-center justify-center bg-[#F3F4F6]">
                   <img
-                    src={ImageStephen}
+                    src={Stephen}
                     className="max-h-full w-auto object-contain"
                   />
                 </div>
 
                 <CardHeader>
-                  <CardTitle>Marcus Lee</CardTitle>
-                  <CardDescription>Electronic Drum Instructor</CardDescription>
+                  <CardTitle>Stephen</CardTitle>
+                  <CardDescription>Drummer & Electronic Percussionist</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1">
                   <p className="text-gray-500 text-sm">
@@ -246,14 +244,14 @@ export default function Landing() {
               <Card className="overflow-hidden flex flex-col px-2 pt-3">
                 <div className="relative w-full h-72 rounded-xl overflow-hidden flex items-center justify-center bg-[#F3F4F6]">
                   <img
-                    src={ImageSunny}
+                    src={Sunny}
                     className="max-h-full w-auto object-contain"
                   />
                 </div>
 
                 <CardHeader>
-                  <CardTitle>Elena Rodriguez</CardTitle>
-                  <CardDescription>Vocals</CardDescription>
+                  <CardTitle>Sunny</CardTitle>
+                  <CardDescription>Guitarist</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1">
                   <p className="text-gray-500 text-sm">
