@@ -195,7 +195,7 @@ export default function Landing() {
 
                 <CardHeader>
                   <CardTitle>Sushil Kumar</CardTitle>
-                  <CardDescription>Keyboard & Vocal Instructor</CardDescription>
+                  <CardDescription>Keyboardist & Vocal Instructor</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1">
                   <p className="text-gray-500 text-sm">
