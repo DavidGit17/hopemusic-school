@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, Star, Award, Calendar, Music } from "lucide-react";
+import {  Star, Award, Music } from "lucide-react";
 import { SushilKumar, Stephen, Sunny } from "@/assets/Images/InstructorsPfps";
 import { Button } from "@/components/ui/button";
 import {
