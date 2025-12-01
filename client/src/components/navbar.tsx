@@ -17,8 +17,8 @@ const navItems = [
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { isLoaded } = useAuth();
-  const [hidden, setHidden] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  // const [hidden, setHidden] = useState(false);
+  // const [lastScrollY, setLastScrollY] = useState(0);
 
   // useEffect(() => {
   //   const handleScroll = () => {
@@ -79,8 +79,8 @@ export default function Navbar() {
     rounded-3xl
     z-60 flex items-center
     transition-transform duration-300 ease-out
-    ${hidden ? "-translate-y-24" : "translate-y-0"}
   `}
+  // ${hidden ? "-translate-y-24" : "translate-y-0"}
       >
         {/* MOBILE NAVBAR */}
         <div className="flex w-full items-center justify-between md:hidden">

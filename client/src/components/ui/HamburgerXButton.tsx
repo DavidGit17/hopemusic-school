@@ -10,7 +10,7 @@ export default function HamburgerXButton({ open, onClick }: HamburgerXButtonProp
         hidden max-[1269px]:flex 
         items-center justify-center
         ml-1 w-8 h-8 rounded-lg cursor-pointer
-        z-[999] relative transition-all duration-200
+        z-999 relative transition-all duration-200
         ${open ? "border border-black" : "border-none"}
       `}
       onClick={(e) => {

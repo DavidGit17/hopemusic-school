@@ -1,4 +1,3 @@
-import React from "react";
 
 export default function HeroBackground({ opacity = 0.6 }) {
   return (
@@ -13,13 +12,13 @@ export default function HeroBackground({ opacity = 0.6 }) {
       <div className="absolute top-[140px] -left-10 w-[280px] h-[220px] bg-[#FF6CDF] rounded-3xl blur-[60px]"></div>
 
       {/* WHITE RECT */}
-      <div className="absolute top-[330px] -left-20 w-[340px] h-[260px] bg-white rounded-3xl blur-[40px]"></div>
+      <div className="absolute top-[330px] -left-20 w-[340px] h-[260px] bg-white rounded-3xl blur-2xl"></div>
 
       {/* ORANGE ROTATED */}
-      <div className="absolute top-[90px] left-[20px] w-[330px] h-[260px] bg-[#FF8240] rotate-[59deg] rounded-3xl blur-[70px]"></div>
+      <div className="absolute top-[90px] left-5 w-[330px] h-[260px] bg-[#FF8240] rotate-59 rounded-3xl blur-[70px]"></div>
 
       {/* WHITE ROTATED */}
-      <div className="absolute top-[40px] left-[230px] w-[330px] h-[260px] bg-white rotate-[59deg] rounded-3xl blur-[60px]"></div>
+      <div className="absolute top-10 left-[230px] w-[330px] h-[260px] bg-white rotate-59 rounded-3xl blur-[60px]"></div>
 
       {/* BOTTOM-LEFT ORANGE */}
       <div className="absolute bottom-[250px] -left-[400px] w-[780px] h-[550px] bg-[#FF8240] rounded-3xl blur-[150px]"></div>
@@ -28,7 +27,7 @@ export default function HeroBackground({ opacity = 0.6 }) {
       <div className="absolute top-[60px] right-[-200px] w-[630px] h-[450px] bg-[#FF8240] rounded-3xl blur-[120px]"></div>
 
       {/* TOP-RIGHT PEACH */}
-      <div className="absolute top-[200px] right-[-100px] w-[600px] h-[690px] bg-[#FFD8C4] rotate-[57deg] rounded-3xl blur-[160px]"></div>
+      <div className="absolute top-[200px] right-[-100px] w-[600px] h-[690px] bg-[#FFD8C4] rotate-57 rounded-3xl blur-[160px]"></div>
     </div>
   );
 }
