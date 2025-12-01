@@ -17,8 +17,26 @@ const navItems = [
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { isLoaded } = useAuth();
+  const [hidden, setHidden] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > lastScrollY && window.scrollY > 50) {
+  //       // scrolling down
+  //       setHidden(true);
+  //     } else {
+  //       // scrolling up
+  //       setHidden(false);
+  //     }
+  //     setLastScrollY(window.scrollY);
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, [lastScrollY]);
+
   const handleToggleMobileMenu = () => {
-    console.debug("Navbar: toggling mobile menu");
     setMobileMenuOpen((prev) => !prev);
   };
 
@@ -52,15 +70,19 @@ export default function Navbar() {
     <>
       {/* NAVBAR */}
       <nav
-        className="
-    fixed top-0 left-0 z-60 w-full h-16
-    flex items-center 
-    px-4 md:px-10 lg:px-16
-    bg-white/30 backdrop-blur-lg
-    border-b border-white/20
-  "
+        className={`fixed left-1/2 -translate-x-1/2
+    top-4
+    w-[95%] md:w-[85%] lg:w-[80%]
+    h-16 px-4 md:px-10 lg:px-16
+    bg-white/10 backdrop-blur-xl
+    shadow-lg shadow-black/10
+    rounded-3xl
+    z-60 flex items-center
+    transition-transform duration-300 ease-out
+    ${hidden ? "-translate-y-24" : "translate-y-0"}
+  `}
       >
-        {/* MOBILE NAVBAR (3 columns) */}
+        {/* MOBILE NAVBAR */}
         <div className="flex w-full items-center justify-between md:hidden">
           {/* LEFT: Hamburger */}
           <div className="flex w-1/3 items-center z-999">
@@ -70,24 +92,23 @@ export default function Navbar() {
             />
           </div>
 
-          {/* CENTER: Logo */}
-          <div className="flex w-1/3 justify-center">
-            <Link to="/">
-              <img src={logo} alt="Logo" className="h-8 w-auto" />
-            </Link>
-          </div>
+          {/* CENTER: empty to balance layout */}
+          <div className="flex w-1/3 justify-center"></div>
 
-          {/* RIGHT: Auth */}
+          {/* RIGHT: Logo (moved here) */}
           <div className="flex w-1/3 justify-end">
-            {isLoaded ? (
-              <AuthButtons />
-            ) : (
-              <div className="w-20 h-8 bg-gray-200 rounded animate-pulse" />
-            )}
+            <Link to="/">
+              <img
+                src={logo}
+                alt="Logo"
+                className="h-8 md:h-9 w-auto object-contain shrink-0
+"
+              />
+            </Link>
           </div>
         </div>
 
-        {/* DESKTOP */}
+        {/* DESKTOP NAVBAR */}
         <div className="hidden md:flex w-full items-center justify-between">
           <Link to="/" className="flex items-center">
             <img src={logo} alt="Logo" className="h-9 w-auto" />
@@ -111,7 +132,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* MOBILE OVERLAY (blur + dim) */}
+      {/* MOBILE OVERLAY */}
       <div
         className={`
           fixed inset-0 z-45 md:hidden
@@ -142,13 +163,26 @@ export default function Navbar() {
           className="
             w-4/5 max-w-xs p-6 rounded-2xl
             bg-white shadow-xl
+            flex flex-col
           "
         >
-          {isLoaded ? (
-            renderNavLinks(true)
-          ) : (
-            <div className="w-40 h-6 bg-gray-200 rounded animate-pulse" />
-          )}
+          {/* NAVLINKS */}
+          <div className="flex-1">
+            {isLoaded ? (
+              renderNavLinks(true)
+            ) : (
+              <div className="w-40 h-6 bg-gray-200 rounded animate-pulse" />
+            )}
+          </div>
+
+          {/* LOGIN CTA (BOTTOM CENTER) */}
+          <div className="pt-6 flex justify-center">
+            {isLoaded ? (
+              <AuthButtons />
+            ) : (
+              <div className="w-24 h-8 bg-gray-200 rounded animate-pulse" />
+            )}
+          </div>
         </div>
       </div>
     </>

@@ -25,25 +25,29 @@ export default function Landing() {
   return (
     <div className="w-full overflow-x-hidden">
       {/* HERO SECTION */}
-      <section className=" w-full flex flex-col items-center justify-center min-h-[75vh] py-12 md:py-24 bg-linear-to-b from-purple-50 to-white">
+      <section className=" w-full flex flex-col items-center justify-center h-screen  md:pt-40">
         <img
           src={HeroBg}
           className="absolute inset-0 w-full h-full object-cover z-0"
         />
 
-        <div className="relative z-10 flex flex-col items-center font-playfair  text-center container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-semibold text-black leading-tight max-w-4xl">
-            Discover the Musician in You
+        <div className="relative z-10 flex flex-col items-center font-playfair  text-center container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:py-16 h-screen ">
+          <h1 className="text-5xl sm:text-3xl md:text-6xl lg:text-6xl font-semibold text-black leading-tight max-w-4xl">
+            Discover the Musician <br className="md:hidden"/>in You
           </h1>
 
           <p className="mt-4 text-base sm:text-lg md:text-xl font-inter text-seashell-700 max-w-2xl">
             No experience needed—just bring your passion for music!
           </p>
-
+          <div className="mt-8 md:pt-6">
+            <Button className="bg-[#FF804F] text-white text-md sm:text-base font-bold font-inter px-6 py-5 rounded-lg hover:bg-red-700 transition">
+              Get Started Today
+            </Button>
+          </div>
           <div className="w-full pt-10">
             <img
               src={HeroBanner}
-              className="w-full object-cover sm:h-full h-40"
+              className="w-full object-cover sm:h-full h-50 md:h-64 md:"
               style={{
                 maxWidth: "100vw",
                 width: "100vw",
@@ -51,17 +55,12 @@ export default function Landing() {
               }}
             />
           </div>
-          <div className="mt-8">
-            <Button className="bg-[#FF804F] text-white text-sm sm:text-base font-bold  font-inter px-6 py-5 rounded-lg hover:bg-red-700 transition">
-              Get Started Today
-            </Button>
-          </div>
         </div>
       </section>
 
       {/* INSTRUMENTS SECTION */}
       <section className="w-full bg-white">
-        <div className="py-12 md:py-20 flex justify-center">
+        <div className="w-full pt-20 md:pt-28 lg:pt-36 pb-12 bg-white">
           <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             {/* Title */}
             <div className="flex flex-col items-center text-center space-y-4">
@@ -195,7 +194,9 @@ export default function Landing() {
 
                 <CardHeader>
                   <CardTitle>Sushil Kumar</CardTitle>
-                  <CardDescription>Keyboardist & Vocal Instructor</CardDescription>
+                  <CardDescription>
+                    Keyboardist & Vocal Instructor
+                  </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1">
                   <p className="text-gray-500 text-sm">

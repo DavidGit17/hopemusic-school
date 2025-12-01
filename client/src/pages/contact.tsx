@@ -25,7 +25,8 @@ import { useToast } from "@/hooks/use-toast";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     phone: "",
     interest: "",
@@ -38,7 +39,8 @@ export default function Contact() {
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSelectChange = (value: string) => {
@@ -57,7 +59,8 @@ export default function Contact() {
 
       setIsSubmitting(false);
       setFormData({
-        name: "",
+        firstName: "",
+        lastName: "",
         email: "",
         phone: "",
         interest: "",
@@ -86,30 +89,51 @@ export default function Contact() {
       {/* CONTENT */}
       <section className="w-full py-12 md:py-24 lg:py-32 bg-white dark:bg-gray-950">
         <div className="max-w-7xl mx-auto px-4 md:px-6 grid gap-12 lg:grid-cols-2">
-          {/* FORM SECTION */}
-          <div>
-            <div className="text-center lg:text-left space-y-4">
+          {/* FORM SECTION (left) */}
+          <div className="w-full">
+            <div className="space-y-3 text-left">
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
                 Get in Touch
               </h2>
-              <p className="text-gray-600 dark:text-gray-400 max-w-lg mx-auto lg:mx-0 text-base sm:text-lg md:text-xl">
+              <p className="text-gray-600 dark:text-gray-400 max-w-lg text-base sm:text-lg md:text-xl">
                 Fill out the form and we will respond as soon as possible.
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="mt-8 space-y-6">
-              <div className="space-y-2">
-                <Label htmlFor="name">Full Name</Label>
-                <Input
-                  id="name"
-                  name="name"
-                  placeholder="Your name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                />
+            <form
+              onSubmit={handleSubmit}
+              className="mt-8 space-y-6 w-full max-w-xl"
+            >
+              {/* FIRST + LAST NAME */}
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="space-y-2">
+                  <Label htmlFor="firstName">First Name</Label>
+                  <Input
+                    id="firstName"
+                    name="firstName"
+                    placeholder="First name"
+                    required
+                    value={formData.firstName}
+                    onChange={handleChange}
+                    className="w-full"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="lastName">Last Name</Label>
+                  <Input
+                    id="lastName"
+                    name="lastName"
+                    placeholder="Last name"
+                    required
+                    value={formData.lastName}
+                    onChange={handleChange}
+                    className="w-full"
+                  />
+                </div>
               </div>
 
+              {/* EMAIL + PHONE */}
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
@@ -121,6 +145,7 @@ export default function Contact() {
                     required
                     value={formData.email}
                     onChange={handleChange}
+                    className="w-full"
                   />
                 </div>
 
@@ -133,10 +158,12 @@ export default function Contact() {
                     placeholder="Your phone number"
                     value={formData.phone}
                     onChange={handleChange}
+                    className="w-full"
                   />
                 </div>
               </div>
 
+              {/* SELECT */}
               <div className="space-y-2">
                 <Label>Interested In</Label>
                 <Select
@@ -147,7 +174,9 @@ export default function Contact() {
                     <SelectValue placeholder="Select an instrument" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="keyboard">Keyboard & Piano</SelectItem>
+                    <SelectItem value="keyboard">
+                      Keyboard &amp; Piano
+                    </SelectItem>
                     <SelectItem value="guitar">Guitar</SelectItem>
                     <SelectItem value="electronic">Electronic Pads</SelectItem>
                     <SelectItem value="vocals">Vocals</SelectItem>
@@ -156,18 +185,21 @@ export default function Contact() {
                 </Select>
               </div>
 
+              {/* MESSAGE */}
               <div className="space-y-2">
                 <Label htmlFor="message">Message</Label>
                 <Textarea
                   id="message"
                   name="message"
                   placeholder="Your message"
-                  rows={5}
                   value={formData.message}
                   onChange={handleChange}
+                  className="min-h-[140px] max-h-[400px] w-full resize-both"
+                  style={{ resize: "both" }} // force both directions (overrides any default resize-y)
                 />
               </div>
 
+              {/* SUBMIT BUTTON */}
               <Button
                 type="submit"
                 disabled={isSubmitting}
@@ -178,7 +210,7 @@ export default function Contact() {
             </form>
           </div>
 
-          {/* INFO SECTION */}
+          {/* INFO SECTION (right) */}
           <div className="space-y-6">
             {/* LOCATION */}
             <Card>
@@ -207,7 +239,7 @@ export default function Contact() {
               </CardContent>
             </Card>
 
-            {/* CONTACT NUMBERS */}
+            {/* PHONE NUMBERS */}
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center">

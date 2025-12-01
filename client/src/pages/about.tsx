@@ -16,11 +16,11 @@ export default function About() {
             {/* TEXT */}
             <div className="space-y-6 order-2 lg:order-1 text-center lg:text-left">
               <h1 className="text-3xl sm:text-5xl xl:text-6xl font-bold tracking-tight">
-                About Harmony Music School
+                Hope Music School
               </h1>
 
               <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto lg:mx-0 text-base sm:text-lg md:text-xl">
-                Inspiring musicians and nurturing talent since 2005. We believe every person has the potential to create beautiful music.
+                Inspiring musicians and nurturing talent since 2022. We believe every person has the potential to create beautiful music.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
@@ -70,11 +70,11 @@ export default function About() {
               <h2 className="text-3xl font-bold tracking-tight">Our Story</h2>
 
               <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto lg:mx-0 text-base sm:text-lg md:text-xl">
-                Founded in 2005 by passionate musicians, Harmony Music School began as a small studio with a dream: to make quality music education accessible to everyone.
+                Founded in 2022 by passionate musicians, Harmony Music School began as a small studio with a dream: to make quality music education accessible to everyone.
               </p>
 
               <p className="text-gray-500 dark:text-gray-400">
-                What started with three instructors and a few students is now a thriving community of 500+ learners and 15 expert mentors. Our growth comes from personalized teaching and a deep love for music.
+                What started with three instructors and a few students is now a thriving community of 100+ learners and 6+ expert mentors. Our growth comes from personalized teaching and a deep love for music.
               </p>
 
               <p className="text-gray-500 dark:text-gray-400">
@@ -153,31 +153,31 @@ export default function About() {
             </p>
           </div>
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
             <Card className="text-center p-6">
               <Users className="mx-auto h-12 w-12 text-[#EC622D] mb-4" />
-              <CardHeader><CardTitle className="text-3xl font-bold">500+</CardTitle></CardHeader>
+              <CardHeader><CardTitle className="text-3xl font-bold">100+</CardTitle></CardHeader>
               <CardContent><p className="text-gray-500">Active Students</p></CardContent>
             </Card>
 
             <Card className="text-center p-6">
               <Music className="mx-auto h-12 w-12 text-[#EC622D] mb-4" />
-              <CardHeader><CardTitle className="text-3xl font-bold">15</CardTitle></CardHeader>
+              <CardHeader><CardTitle className="text-3xl font-bold">6</CardTitle></CardHeader>
               <CardContent><p className="text-gray-500">Expert Instructors</p></CardContent>
             </Card>
 
             <Card className="text-center p-6">
               <Award className="mx-auto h-12 w-12 text-[#EC622D] mb-4" />
-              <CardHeader><CardTitle className="text-3xl font-bold">18</CardTitle></CardHeader>
+              <CardHeader><CardTitle className="text-3xl font-bold">10</CardTitle></CardHeader>
               <CardContent><p className="text-gray-500">Years of Excellence</p></CardContent>
             </Card>
 
-            <Card className="text-center p-6">
+            {/* <Card className="text-center p-6">
               <Target className="mx-auto h-12 w-12 text-[#EC622D] mb-4" />
               <CardHeader><CardTitle className="text-3xl font-bold">2000+</CardTitle></CardHeader>
               <CardContent><p className="text-gray-500">Graduates</p></CardContent>
-            </Card>
+            </Card> */}
 
           </div>
         </div>
