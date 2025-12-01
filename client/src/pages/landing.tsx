@@ -31,8 +31,8 @@ export default function Landing() {
           className="absolute inset-0 w-full h-full object-cover z-0"
         />
 
-        <div className="relative z-10 flex flex-col items-center font-playfair  text-center container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:py-16 h-screen ">
-          <h1 className="text-5xl sm:text-3xl md:text-6xl lg:text-6xl font-semibold text-black leading-tight max-w-4xl">
+        <div className="relative z-10 flex flex-col items-center font-playfair  text-center container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pt-0 md:pt-0  pt-40 h-screen ">
+          <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-6xl font-semibold text-black leading-tight max-w-4xl">
             Discover the Musician <br className="md:hidden"/>in You
           </h1>
 
@@ -47,7 +47,7 @@ export default function Landing() {
           <div className="w-full pt-10">
             <img
               src={HeroBanner}
-              className="w-full object-cover sm:h-full h-50 md:h-64 md:"
+              className="w-full object-cover sm:h-64 h-50 md:h-64"
               style={{
                 maxWidth: "100vw",
                 width: "100vw",
