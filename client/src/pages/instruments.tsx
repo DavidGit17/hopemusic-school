@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../components/tabs";
+import Imagek from "../assets/Instruments-Page-Images/keyboard.jpg"
+import Imagep from "../assets/Instruments-Page-Images/pads.jpeg"
+import Imageg from "../assets/Instruments-Page-Images/guitar.jpg"
+import Imagev from "../assets/Instruments-Page-Images/vocals.jpg"
 
 export default function Instruments() {
   return (
@@ -37,7 +41,7 @@ export default function Instruments() {
                 {/* IMAGE */}
                 <div className="flex justify-center">
                   <img
-                    src="https://preview-music-school-website-kzmntsu7nnz4q704nj2d.vusercontent.net/placeholder.svg?height=400&width=600"
+                    src={Imagek}
                     alt="Piano and Keyboard"
                     className="rounded-lg object-cover w-full max-w-md sm:max-w-lg"
                   />
@@ -122,7 +126,7 @@ export default function Instruments() {
               <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
                 <div className="flex justify-center">
                   <img
-                    src="https://preview-music-school-website-kzmntsu7nnz4q704nj2d.vusercontent.net/placeholder.svg?height=400&width=60"
+                    src={Imageg}
                     alt="Guitar"
                     className="rounded-lg object-cover w-full max-w-md sm:max-w-lg"
                   />
@@ -202,7 +206,7 @@ export default function Instruments() {
               <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
                 <div className="flex justify-center">
                   <img
-                    src="https://preview-music-school-website-kzmntsu7nnz4q704nj2d.vusercontent.net/placeholder.svg?height=400&width=60"
+                    src={Imagep}
                     alt="Electronic Pads"
                     className="rounded-lg object-cover w-full max-w-md sm:max-w-lg"
                   />
@@ -283,7 +287,7 @@ export default function Instruments() {
               <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
                 <div className="flex justify-center">
                   <img
-                    src="https://preview-music-school-website-kzmntsu7nnz4q704nj2d.vusercontent.net/placeholder.svg?height=400&width=60"
+                    src={Imagev}
                     alt="Vocals"
                     className="rounded-lg object-cover w-full max-w-md sm:max-w-lg"
                   />
