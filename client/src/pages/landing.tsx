@@ -25,25 +25,27 @@ export default function Landing() {
   return (
     <div className="w-full overflow-x-hidden">
       {/* HERO SECTION */}
-      <section className=" w-full flex flex-col items-center justify-center h-screen  md:pt-40">
+      <section className=" w-full flex flex-col items-center justify-center h-screen md:pt-40">
         <img
           src={HeroBg}
           className="absolute inset-0 w-full h-full object-cover z-0"
         />
 
-        <div className="relative z-10 flex flex-col items-center font-playfair  text-center container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pt-0 md:pt-0  pt-40 h-screen ">
+        <div className="relative z-10 flex flex-col items-center font-playfair text-center container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:pt-0 md:pt-0 pt-40 h-screen">
           <h1 className="text-5xl sm:text-5xl md:text-6xl lg:text-6xl font-semibold text-black leading-tight max-w-4xl">
-            Discover the Musician <br className="md:hidden"/>in You
+            Discover the Musician <br className="md:hidden" /> in You
           </h1>
 
           <p className="mt-4 text-base sm:text-lg md:text-xl font-inter text-seashell-700 max-w-2xl">
             No experience needed—just bring your passion for music!
           </p>
+
           <div className="mt-8 md:pt-6">
-            <Button className="bg-[#FF804F] text-white text-md sm:text-base font-bold font-inter px-6 py-5 rounded-lg hover:bg-red-700 transition">
+            <Button className="bg-[#EC622D] text-white text-md sm:text-base font-bold font-inter px-6 py-5 rounded-lg hover:bg-[#D35220] hover:brightness-110 transition cursor-pointer">
               Get Started Today
             </Button>
           </div>
+
           <div className="w-full pt-10">
             <img
               src={HeroBanner}
@@ -89,7 +91,7 @@ export default function Landing() {
                 </CardContent>
                 <CardFooter>
                   <Link to="/instruments/keyboard" className="w-full">
-                    <Button variant="outline" className="w-full">
+                    <Button variant="outline" className="w-full cursor-pointer">
                       Learn More
                     </Button>
                   </Link>
@@ -110,7 +112,7 @@ export default function Landing() {
                 </CardContent>
                 <CardFooter>
                   <Link to="/instruments/guitar" className="w-full">
-                    <Button variant="outline" className="w-full">
+                    <Button variant="outline" className="w-full cursor-pointer">
                       Learn More
                     </Button>
                   </Link>
@@ -136,7 +138,7 @@ export default function Landing() {
                 </CardContent>
                 <CardFooter>
                   <Link to="/instruments/electronic-pads" className="w-full">
-                    <Button variant="outline" className="w-full">
+                    <Button variant="outline" className="w-full cursor-pointer">
                       Learn More
                     </Button>
                   </Link>
@@ -156,7 +158,7 @@ export default function Landing() {
                 </CardContent>
                 <CardFooter>
                   <Link to="/instruments/vocals" className="w-full">
-                    <Button variant="outline" className="w-full">
+                    <Button variant="outline" className="w-full cursor-pointer">
                       Learn More
                     </Button>
                   </Link>
@@ -201,12 +203,16 @@ export default function Landing() {
                 <CardContent className="flex-1">
                   <p className="text-gray-500 text-sm">
                     Makes learning keyboard and singing feel effortless with
-                    clear and friendly teaching.
+                    clear teaching.
                   </p>
                 </CardContent>
                 <CardFooter>
                   <Link to="/instructors/sushil-kumar">
-                    <Button variant="ghost" size="sm">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="cursor-pointer"
+                    >
                       View Profile
                     </Button>
                   </Link>
@@ -224,17 +230,22 @@ export default function Landing() {
 
                 <CardHeader>
                   <CardTitle>Stephen</CardTitle>
-                  <CardDescription>Drummer & Electronic Percussionist</CardDescription>
+                  <CardDescription>
+                    Drummer & Electronic Percussionist
+                  </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-1">
                   <p className="text-gray-500 text-sm">
-                    Master of rhythm, makes electronic drumming super fun and
-                    engaging for beginners.
+                    Master of rhythm, makes drumming fun for beginners.
                   </p>
                 </CardContent>
                 <CardFooter>
                   <Link to="/instructors/marcus-lee">
-                    <Button variant="ghost" size="sm">
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="cursor-pointer"
+                    >
                       View Profile
                     </Button>
                   </Link>
@@ -256,13 +267,17 @@ export default function Landing() {
                 </CardHeader>
                 <CardContent className="flex-1">
                   <p className="text-gray-500 text-sm">
-                    Helps students master vocal techniques quickly through a
-                    calm and structured teaching style.
+                    Helps students progress confidently with structured
+                    guidance.
                   </p>
                 </CardContent>
                 <CardFooter>
                   <Link to="/instructors/elena-rodriguez">
-                    <Button variant="ghost" size="sm"> 
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="cursor-pointer"
+                    >
                       View Profile
                     </Button>
                   </Link>
@@ -273,7 +288,7 @@ export default function Landing() {
             {/* View All Button */}
             <div className="flex justify-center">
               <Link to="/instructors">
-                <Button variant="outline">
+                <Button variant="outline" className="cursor-pointer">
                   View All Instructors <ChevronRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
@@ -366,12 +381,15 @@ export default function Landing() {
 
           <div className="flex flex-col sm:flex-row gap-4 sm:justify-end font-inter">
             <Link to="/contact">
-              <Button className="w-full sm:w-auto bg-[#FF804F] hover:bg-seashell-500">
+              <Button className="w-full sm:w-auto bg-[#EC622D] hover:bg-[#D35220] hover:brightness-110 cursor-pointer">
                 Contact Us
               </Button>
             </Link>
             <Link to="tel:+1234567890">
-              <Button variant="outline" className="w-full sm:w-auto">
+              <Button
+                variant="outline"
+                className="w-full sm:w-auto cursor-pointer"
+              >
                 Call Us
               </Button>
             </Link>

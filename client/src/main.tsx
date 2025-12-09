@@ -10,7 +10,7 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ClerkProvider publishableKey={clerkKey}>
       <BrowserRouter>
-        <App />
+        <App/>
       </BrowserRouter>
     </ClerkProvider>
   </StrictMode>

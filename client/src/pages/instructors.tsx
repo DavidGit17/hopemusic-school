@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import {  Star, Award, Music } from "lucide-react";
+import { Star, Award, Music } from "lucide-react";
 import { SushilKumar, Stephen, Sunny } from "@/assets/Images/InstructorsPfps";
 import { Button } from "@/components/ui/button";
 import {
@@ -132,17 +132,18 @@ export default function Instructors() {
             {instructors.map((inst) => (
               <Card
                 key={inst.id}
-                className="flex flex-col h-full overflow-hidden rounded-xl shadow-sm"
+                className="flex flex-col h-full overflow-hidden px-4 pb-4 rounded-xl shadow-sm"
               >
-                {/* RESPONSIVE IMAGE FIX */}
-                <div className="relative w-full h-82 rounded-xl overflow-hidden flex items-center justify-center bg-[#F3F4F6]">
+                {/* Image container */}
+                <div className="relative w-full h-64 rounded-lg overflow-hidden flex items-center justify-center bg-[#F3F4F6]">
                   <img
                     src={inst.image}
                     alt={inst.name}
                     className="max-h-full w-auto object-contain"
                   />
+                   
                 </div>
-
+                 
                 <CardHeader className="flex justify-between">
                   <div>
                     <CardTitle className="text-xl">{inst.name}</CardTitle>
@@ -156,7 +157,6 @@ export default function Instructors() {
                     <span className="text-sm">{inst.rating}</span>
                   </div>
                 </CardHeader>
-
                 <CardContent className="space-y-4 flex-1">
                   <p className="text-gray-600 text-sm line-clamp-3">
                     {inst.bio}
@@ -164,20 +164,18 @@ export default function Instructors() {
 
                   <div>
                     <h4 className="font-medium mb-1">Specialties</h4>
-                    <div className="flex flex-wrap gap-2 text-[#EC622D]">
+                    <div className="flex flex-wrap gap-2">
                       {inst.specialties.map((s) => (
-                        <Badge
+                        <div
                           key={s}
-                          variant="secondary"
-                          className="text-xs px-2 py-1"
+                          className="text-xs px-2 py-1 text-[#EC622D] bg-[#FEE4DC] rounded-full font-bold"
                         >
                           {s}
-                        </Badge>
+                        </div>
                       ))}
                     </div>
                   </div>
                 </CardContent>
-
                 <div className="p-6 pt-0 flex justify-center">
                   <div className="h-1 w-12 bg-[#EC622D] rounded-full"></div>
                 </div>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Icon from "/Favicon-o.png"
+import Icon from "/Favicon-o.png";
 
 function footer() {
   return (
@@ -19,8 +19,11 @@ function footer() {
             to="/contact"
             className="text-sm text-muted-foreground hover:underline"
           >
-            Contact Us
+              
           </Link>
+          <Link to="" className=""></Link>
+          <Link to="" className=""></Link>
+          <Link to="" className=""></Link>
         </div>
       </div>
     </footer>
